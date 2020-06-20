@@ -2,9 +2,9 @@
 
 ## Giới thiệu khóa học
 
-* Mục đích
-* Mục tiêu
-* Cách làm việc
+* [Mục đích khóa học](../../README.md#mục-đích-khóa-học)
+* [Mục tiêu](../../README.md#mục-tiêu)
+* [Cách làm việc](../../README.md#cách-làm-việc)
 
 ## Format bài giảng
 
