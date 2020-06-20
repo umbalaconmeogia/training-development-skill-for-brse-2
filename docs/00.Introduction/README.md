@@ -20,4 +20,4 @@ Hôm nay không có
 
 ## Nội dung về kỹ năng SE
 
-Hôm nay nói về việc [chuẩn bị trước cho khóa học](../../seSkills/00.Prerequisites/README.md)
+Hôm nay nói về việc [chuẩn bị trước cho khóa học](../00.Prerequisites.se/README.md)
