@@ -28,10 +28,13 @@ Học viên sẽ được thực hành các kiến thức về
 
 ## Cách làm việc
 
-1. The lesson takes one hour everyday, after that you must learn by yourself, working hard.
+1. The lesson takes one hour everyday, after that you must learn by yourself.
 2. Discuss with other member actively.
 3. You must complete the tasks, no matter what you are busy or not take part in the lesson offline.
-4. Nội dung học tập không do người hướng dẫn thiết kế hoàn toàn, mà mong muốn bản thân học viên cũng tự tìm hiểu và cùng hoàn thiện nội dung.
+
+*Tôn chỉ hoạt động*
+1. Chúng ta học được nhiều hơn từ thất bại chứ không phải từ thành công. Do đó đừng ngại khi bạn làm không đúng, hãy mạnh dạn chia sẻ vấn đề với mọi người.
+2. Nội dung học tập không do người hướng dẫn thiết kế hoàn toàn, mà mong muốn bản thân học viên cũng tự tìm hiểu và cùng hoàn thiện nội dung.
 
 ## Bài học
 
@@ -48,7 +51,7 @@ Học viên sẽ được thực hành các kiến thức về
 
 | No. | Chủ đề | Dev process | SE skill |
 |---|---|---|---|
-| 0 | Mở đầu | | Prerequisites |
+| 0 | Mở đầu | | Prerequisites (&coding convention) |
 | 1 | Kiếm được dự án | Request for proposal | Using git |
 | 2 | Start dự án | Requirement definition | Prepare dev environment |
 | 3 | Lên kế hoạch | Project plan | Kiến trúc MVC |
@@ -57,22 +60,24 @@ Học viên sẽ được thực hành các kiến thức về
 | 5 | Function design | BD::Functional design | Generating code with Gii |
 | 6 | Non-functional design | BD::Non-functional design | Active Record and validation |
 | 7 | Detail classes | DD:Design classes | AR relation, searching and deleting |
-| 8 | Process sequence | DD::Sequence |  |
+| 8 | Process sequence | DD::Sequence | Login |
+| 9 | Test | Test case, bug | Logging |
+| 10 | Prepare for customer | User manual | Test server |
+| 11 | UAT | UAT | Bug management |
+| 12 | Prepare release | Release decision | Test report |
+| 13 | Release plan | Release plan | Release steps |
+| 14 | Release | Release and confirm | |
+| 15 | Update function | Contigency plan | Branch, pull request, merge, tag |
 
+## External coding skill
 
-Session and cookies
-
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
-| 2 | | | |
+* Console command
+* I18n
+* More about performance
+* Module
+* Security
+  * File should not managed on git.
+  * XSS, CSRF
+  * RBAC
+  * Pen test
+* Testing
