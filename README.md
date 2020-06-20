@@ -45,17 +45,16 @@ Học viên sẽ được thực hành các kiến thức về
 | 2 | Start dự án | Requirement definition | Prepare dev environment |
 | 3 | Lên kế hoạch | Project plan | Kiến trúc MVC |
 | 4 | Basic design | BD::Use cases, business flow | Working with forms |
-| 4 | Basic design | BD::database | DB migration |
-| 5 | Function design | BD::Functional design | Generating code with Gii |
-| 6 | Non-functional design | BD::Non-functional design | Active Record and validation |
-| 7 | Detail classes | DD:Design classes | AR relation, searching and deleting |
-| 8 | Process sequence | DD::Sequence | Login |
-| 9 | Test | Test case, bug | Logging |
-| 10 | Prepare for customer | User manual | Test server |
-| 11 | UAT | UAT | Bug management |
-| 12 | Prepare release | Release decision | Test report |
-| 13 | Release plan | Release plan | Release steps |
-| 14 | Release | Release and confirm | |
+| 5 | Thiết kế database | BD::Database design | DB migration |
+| 6 | Function design | BD::Functional design | Generating code with Gii |
+| 7 | Non-functional design | BD::Non-functional design | Active Record and validation |
+| 8 | Detail classes | DD:Design classes | AR relation, searching and deleting |
+| 9 | Process sequence | DD::Sequence | Login |
+| 10 | Test | Test case, bug | Logging |
+| 11 | Prepare for customer | User manual | Test server |
+| 12 | UAT | UAT | Bug management |
+| 13 | Prepare release | Release decision | Test report |
+| 14 | Release plan | Release plan, release, confirm | Release steps |
 | 15 | Update function | Contigency plan | Branch, pull request, merge, tag |
 
 ## External coding skill
