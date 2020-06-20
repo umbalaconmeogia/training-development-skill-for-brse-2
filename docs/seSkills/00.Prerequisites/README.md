@@ -11,6 +11,6 @@
 
 ## Coding convention
 
-Tham khảo về coding convention ở đây
-* [Coding convention đối với một project PHP](https://viblo.asia/p/coding-convention-doi-voi-mot-project-php-ORNZqNPrl0n)
-* [Coding Conventions và các chuẩn viết code trong PHP](https://viblo.asia/p/coding-conventions-va-cac-chuan-viet-code-trong-php-naQZRbrGZvx)
+* Tham khảo [tại đây](https://github.com/umbalaconmeogia/experiment/blob/master/yii2/codingConvention.md)
+* Trước hết nhớ phần [coding convention cơ bản](https://github.com/umbalaconmeogia/experiment/blob/master/yii2/codingConvention.md#c%C6%A1-b%E1%BA%A3n)
+* Còn phần best practice liên quan đến yii2 thì sẽ chứng thực dần dần trong quá trình học.
