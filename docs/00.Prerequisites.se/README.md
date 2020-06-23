@@ -6,6 +6,7 @@
 * Các phần mềm cần cài đặt trong máy tính
   * [Git](../git/install.md)
   * [Docker](../docker/install.md)
+  * Code editor [Visual Code Studio](https://code.visualstudio.com/)
   * Phần mềm vẽ UML (optional, ví dụ [A5:SQL Mk-2 for Windows](https://a5m2.mmatsubara.com/index.en.html))
   * Phần mềm thiết kế DB (optional, ví dụ [drawio](https://app.diagrams.net/))
 
