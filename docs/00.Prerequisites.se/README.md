@@ -3,6 +3,7 @@
 ## Những thứ cần chuẩn bị trước khi bắt đầu khóa học
 
 * Học viên cần học qua [kiến thức cơ bản về PHP](https://www.w3schools.com/php/DEFAULT.asp)
+  Trong trang web này có tính năng thực hành online luôn (bấm nút `Try it Yourslef`)
 * Các phần mềm cần cài đặt trong máy tính
   * [Git](../git/install.md)
   * [Docker](../docker/install.md)
