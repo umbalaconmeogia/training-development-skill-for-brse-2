@@ -41,7 +41,7 @@ Học viên sẽ được thực hành các kiến thức về
 | No. | Chủ đề | Dev process | SE skill |
 |---|---|---|---|
 | 0 | [Mở đầu](docs/00.Lesson.Introduction/README.md) | | [Prerequisites](docs/00.Prerequisites.se/README.md) |
-| 1 | Kiếm được dự án | Request for proposal | Using git |
+| 1 | [Kiếm được dự án](docs/01.WeFoundAProject/README.md) | [Request for proposal](docs/01.WeFoundAProject/RFP.md) | [Using git](docs/01.WeFoundAProject/git.md) |
 | 2 | Start dự án | Requirement definition | Prepare dev environment |
 | 3 | Lên kế hoạch | Project plan | Kiến trúc MVC |
 | 4 | Basic design | BD::Use cases, business flow | Working with forms |
