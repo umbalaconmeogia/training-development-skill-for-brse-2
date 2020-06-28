@@ -1,5 +1,13 @@
 # Mở đầu
 
+## Mục tiêu của bài hôm nay
+
+1. Phần quy trình: Không có.
+2. Phần kỹ thuật
+    1. Cài đặt git
+    2. Cài đặt docker
+    3. Học kiến thức cơ bản về PHP (nếu chưa biết)
+
 ## Giới thiệu khóa học
 
 * [Mục đích khóa học](../../README.md#mục-đích-khóa-học)
