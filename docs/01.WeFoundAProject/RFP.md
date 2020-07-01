@@ -39,6 +39,8 @@ Nói một cách nghiêm ngặt thì RFP chỉ là tài liệu giới thiệu c�
     Viết lại dựa trên [RFP (request for proposal) là gì?](https://titanevent.vn/rfp-request-for-proposal-la-gi.html)
 </details>
 
+[RFP cho dự án "Hệ thống từ điển cho các dự án outsourcing"](RFP_vocabulary.md)
+
 ## Proposal
 
 Khi nhận được yêu cầu về dự án, thường chúng ta phải làm một bản proposal, với nội dung chủ yếu sau:
@@ -48,5 +50,3 @@ Khi nhận được yêu cầu về dự án, thường chúng ta phải làm m�
 * Đưa ra estimation (dự toán), schedule, tổ chức cho dự án.
 
 Tất nhiên, các thông tin ở thời điểm này chỉ mang tính tương đối.
-
-## [RFP cho dự án "Hệ thống từ điển cho các dự án outsourcing"](RFP_vocabulary.md)
