@@ -42,8 +42,8 @@ Học viên sẽ được thực hành các kiến thức về
 |---|---|---|---|
 | 0 | [Mở đầu](docs/00.Lesson.Introduction/README.md) | | [Prerequisites](docs/00.Prerequisites.se/README.md) |
 | 1 | [Kiếm được dự án](docs/01.WeFoundAProject/README.md) | [Request for proposal](docs/01.WeFoundAProject/RFP.md) | [Using git](docs/01.WeFoundAProject/git.md) |
-| 2 | Start dự án | Requirement definition | [Prepare dev environment](docs/02.ProjectPlan/devEnv.md) |
-| 3 | Lên kế hoạch | Project plan | Kiến trúc MVC |
+| 2 | [Start dự án](docs/02.ProjectPlan/README.md) | Project plan | [Prepare dev environment](docs/02.ProjectPlan/devEnv.md) |
+| 3 | Lên kế hoạch | Requirement definition | Kiến trúc MVC |
 | 4 | Basic design | BD::Use cases, business flow | Working with forms |
 | 5 | Thiết kế database | BD::Database design | DB migration |
 | 6 | Function design | BD::Functional design | Generating code with Gii |
