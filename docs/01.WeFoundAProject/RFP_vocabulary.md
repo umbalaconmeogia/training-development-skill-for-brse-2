@@ -2,13 +2,13 @@
 
 ## Table of contents
 1. [Tên dự án mời thầu](#projectName)
-2. [Giới thiệu về nghiệp vụ](#businessOverview)
-    1 Mục đích
-    2 Nghiệp vụ quản lý từ vựng cho dự án
-    3. Phạm vi phát triển hệ thống
-    4. Schedule
-3. Về tổ chức xây dựng hệ thống
-    1. Phương châm
+2. [Tổng quan về công việc](#taskOverview)
+    1. [Mục đích](#purpose)
+    2. [Nghiệp vụ quản lý từ vựng cho dự án](#businessOverview)
+    3. [Phạm vi phát triển hệ thống](#developmentScope)
+    4. [Schedule](#schedule)
+3. [Về tổ chức xây dựng hệ thống](#taskOrgnization)
+    1. [Phương châm](#policy)
     2. Đề xuất lịch phát triển
     3. Báo cáo tổ chức của đội phát triển
     4. Về việc thay đổi người chịu trách nhiệm
@@ -46,13 +46,13 @@
 11. Các điều kiện khác
     1. Xuất data
 
-## 1. Tên dự án mời thầu <a name"projectName"></a>
+## 1. Tên dự án mời thầu <a name="projectName"></a>
 
 Xây dựng và vận hành hệ thống quản lý từ vựng cho các dự án outsourceing.
 
-## 2. Giới thiệu về nghiệp vụ <a name="businessOverview"></a>
+## 2. Tổng quan về công việc <a name="taskOverview"></a>
 
-### 2.1 Mục đích
+### 2.1 Mục đích <a name="purpose"></a>
 
 Công ty HyTech (gọi tắt là HT) là công ty chuyên làm outsourcing trong lĩnh vực phát triển phần mềm cho các khách hàng nước ngoài. Các khách hàng của công ty nằm ở nhiều nơi trên thế giới, sử dụng nhiều ngôn ngữ khác nhau như tiếng Anh, Nhật...
 
@@ -64,19 +64,19 @@ Tuy nhiên quản lý từ vựng theo file khiến việc tham khảo thông ti
 
 "Hệ thống quản lý từ vựng cho các dự án outsourcing" (gọi tắt là VocabularySystem) này ra đời để giúp cho việc lưu trữ, truy xuất và chia sẻ các từ vựng chuyên môn trong các dự án trong công ty được hiệu quả hơn.
 
-### 2.2 Nghiệp vụ quản lý từ vựng cho dự án
+### 2.2 Nghiệp vụ quản lý từ vựng cho dự án <a name="businessOverview"></a>
 
 Trong quá trình làm dự án, đội dự án (bao gồm khách hàng và bên phát triển) đưa ra danh sách các thuật ngữ chuyên môn bằng tiếng nước ngoài (có kèm giải thích bằng chính ngoại ngữ đó).
 BrSE hoặc Comtor sẽ dịch thuật ngữ và giải thích này sang tiếng Việt.
 Ngoài ra, khi có các từ ngữ nằm ngoài danh sách thuật ngữ trên, nhưng BrSE hoặc Comtor thấy nó cũng là từ ngữ đáng chú ý, thì cũng có thể đăng ký vào danh sách thuật ngữ (cả phần ngoại ngữ và phần được dịch sang tiếng Việt). Danh sách này lưu hành nội bộ bên phát triển, được phân biệt với danh sách thuật ngữ do khách hàng đưa ra.
 Tất cả thành viên dự án có thể tham khảo danh sách thuật ngữ.
 
-### 2.3. Phạm vi phát triển hệ thống
+### 2.3. Phạm vi phát triển hệ thống <a name="developmentScope"></a>
 
 Toàn bộ nghiệp vụ được miêu tả ở trên thuộc phạm vi được hệ thống hóa.
 Ngoài ra, cần lưu ý là các dự án thuộc cùng một lĩnh vực giống nhau, thì có thể có tập từ vựng giống nhau, do đó nên có biện pháp để chia sẻ nguồn từ vựng giữa các dự án, để đỡ công phải nhập dữ liệu.
 
-### 2.4. Schedule
+### 2.4. Schedule <a name="schedule"></a>
 
 Hệ thống được phát triển và vận hành theo lịch như sau:
 1. Thiết kế hệ thống: 2020/07/05 ~ 2020/07/18.
@@ -87,9 +87,9 @@ Hệ thống được phát triển và vận hành theo lịch như sau:
 
 ![RFP_Schedule](material/RFP_Schedule.png)
 
-## 3. Về tổ chức xây dựng hệ thống
+## 3. Về tổ chức xây dựng hệ thống <a name="taskOrgnization"></a>
 
-### 3.1. Phương châm
+### 3.1. Phương châm <a name="policy"></a>
 
 việc xây dựng và đưa hệ thống vào vận hành, do bên nhận thầu lãnh toàn bộ trách nhiệm thực hiện.
 
