@@ -1,10 +1,56 @@
 # Request for Proposal
 
-## 1. Tên dự án mời thầu
+## Table of contents
+1. [Tên dự án mời thầu](#projectName)
+2. [Giới thiệu về nghiệp vụ](#businessOverview)
+    1 Mục đích
+    2 Nghiệp vụ quản lý từ vựng cho dự án
+    3. Phạm vi phát triển hệ thống
+    4. Schedule
+3. Về tổ chức xây dựng hệ thống
+    1. Phương châm
+    2. Đề xuất lịch phát triển
+    3. Báo cáo tổ chức của đội phát triển
+    4. Về việc thay đổi người chịu trách nhiệm
+    5. Về việc trả lời câu hỏi từ HT
+    6. Quy thuộc trách nhiệm
+    7. Về quyền sở hữu và quyền tác giả
+    8. Bảo mật
+    9. Tuân thủ luật pháp
+    10. Thông tin liên hệ
+4. Quy định về nội dung công việc và sản phẩm
+    1. Nội dung công việc
+    2. Sản phẩm
+5. Yêu cầu về hệ thống
+    1. Yêu cầu tính năng
+    2. Yêu cầu màn hình
+    3. Yêu cầu về report
+    4. Yêu cầu về data
+    5. Yêu cầu về khả năng mở rộng
+6. Yêu cầu về bảo mật
+    1. Chính sách bảo mật
+    2. QUản lý bảo mật
+7. Yêu cầu về network
+8. Môi trường vận hành
+    1. Nơi đặt hệ thống
+    2. Yêu cầu về môi trường server
+    3. Yêu cầu về môi trường của người dùng
+9. Release
+10. Bảo trì và vận hành
+    1. Đội ngũ vận hành
+    2. Bảo trì định kỳ
+    3. Liên lạc
+    4. Giám sát
+    5. Đối ứng trouble
+    6. Quản lý server/network
+11. Các điều kiện khác
+    1. Xuất data
+
+## 1. Tên dự án mời thầu <a name"projectName"></a>
 
 Xây dựng và vận hành hệ thống quản lý từ vựng cho các dự án outsourceing.
 
-## 2. Giới thiệu về nghiệp vụ
+## 2. Giới thiệu về nghiệp vụ <a name="businessOverview"></a>
 
 ### 2.1 Mục đích
 
@@ -92,6 +138,55 @@ Bên trúng thầu phải tuân thủ mọi pháp luật liên quan đến nhậ
 
 Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua bán công ty HT.
 
-## Quy định về nội dung công việc và kết quả
+## Quy định về nội dung công việc và sản phẩm
 
 ### Nội dung công việc
+### Sản phẩm
+
+## Yêu cầu về hệ thống
+
+### Yêu cầu tính năng
+
+### Yêu cầu màn hình
+
+### Yêu cầu về report
+
+### Yêu cầu về data
+
+### Yêu cầu về khả năng mở rộng
+
+## Yêu cầu về bảo mật
+
+### Chính sách bảo mật
+
+### QUản lý bảo mật
+
+## Yêu cầu về network
+
+## Môi trường vận hành
+
+### Nơi đặt hệ thống
+
+### Yêu cầu về môi trường server
+
+### Yêu cầu về môi trường của người dùng
+
+## Release
+
+## Bảo trì và vận hành
+
+### Đội ngũ vận hành
+
+### Bảo trì định kỳ
+
+### Liên lạc
+
+### Giám sát
+
+### Đối ứng trouble
+
+### Quản lý server/network
+
+## Các điều kiện khác
+
+### Xuất data

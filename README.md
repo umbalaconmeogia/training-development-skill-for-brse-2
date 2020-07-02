@@ -63,9 +63,9 @@ Học viên sẽ được thực hành các kiến thức về
 * I18n
 * More about performance
 * Module
+* Testing
 * Security
   * File should not managed on git.
   * XSS, CSRF
   * RBAC
   * Pen test
-* Testing
