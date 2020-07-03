@@ -9,15 +9,15 @@
     4. [Schedule](#schedule)
 3. [Về tổ chức xây dựng hệ thống](#taskOrgnization)
     1. [Phương châm](#policy)
-    2. Đề xuất lịch phát triển
-    3. Báo cáo tổ chức của đội phát triển
-    4. Về việc thay đổi người chịu trách nhiệm
-    5. Về việc trả lời câu hỏi từ HT
-    6. Quy thuộc trách nhiệm
-    7. Về quyền sở hữu và quyền tác giả
-    8. Bảo mật
-    9. Tuân thủ luật pháp
-    10. Thông tin liên hệ
+    2. [Đề xuất lịch phát triển](#proposeSchedule)
+    3. [Đề xuất tổ chức của đội phát triển](#proposeOrganization)
+    4. [Về việc thay đổi người chịu trách nhiệm](#changePIC)
+    5. [Về việc trả lời câu hỏi từ HT](#inquiryFromHT)
+    6. [Quy thuộc trách nhiệm](#responsibility)
+    7. [Về quyền sở hữu và quyền tác giả](#ownershipAndCopyright)
+    8. [Nghĩa vụ bảo mật](#confidentiality)
+    9. [Tuân thủ luật pháp](#compliance)
+    10. [Thông tin liên hệ](#inquiryCounter)
 4. Quy định về nội dung công việc và sản phẩm
     1. Nội dung công việc
     2. Sản phẩm
@@ -93,30 +93,29 @@ Hệ thống được phát triển và vận hành theo lịch như sau:
 
 việc xây dựng và đưa hệ thống vào vận hành, do bên nhận thầu lãnh toàn bộ trách nhiệm thực hiện.
 
-### Đề xuất lịch phát triển
+### Đề xuất lịch phát triển <a name="proposeSchedule"></a>
 
 1 tuần sau khi trúng thầu, bên nhận thầu phải đưa ra lịch phát triển hệ thống, và được quản lý của HT chấp nhận.
 
-### Báo cáo tổ chức của đội phát triển
+### Báo cáo tổ chức của đội phát triển <a name="proposeOrganization"></a>
 
 1 tuần sau khi trúng thầu, bên nhận thầu phải đưa ra tổ chức của team phát triển, trong đó ghi rõ tên của những người chịu trách nhiệm chính.
 
-### Về việc thay đổi người chịu trách nhiệm
+### Về việc thay đổi người chịu trách nhiệm <a name="changePIC"></a>
 
 Trong những trường hợp sau đây, nếu HT yêu cầu đổi người chịu trách nhiệm dự án, đội phát triển phải đưa ra người thay thế trong vòng 1 tuần khi có yêu cầu (và người thay thể phải được chấp thuận bởi HT).
 1. Lịch phát triển bị chậm tiến độ 1 tuần trở lên, và sau đó 1 tuần không thể khắc phục (trừ trường hợp bất khả kháng như tai nạn hay yếu tố bên ngoài).
 2. HT phát hiện vấn đề, yêu cầu khắc phục nhưng không được xử lý thỏa đáng.
 
-### Về việc trả lời câu hỏi từ HT
+### Về việc trả lời câu hỏi từ HT <a name="inquiryFromHT"></a>
 
 Đội phát triển phải trả lời những câu hỏi do người đại diện bên HT đưa ra.
 
-### Quy thuộc trách nhiệm
+### Quy thuộc trách nhiệm <a name="responsibility"></a>
 
 Bên trúng thầu là người chịu mọi trách nhiệm cuối cùng bất kể người đứng ra phát triển hệ thống là ai.
 
-
-### Về quyền sở hữu và quyền tác giả
+### Về quyền sở hữu và quyền tác giả <a name="ownershipAndCopyright"></a>
 
 Khi phát triển hệ thống, cần chú ý các điểm sau
 
@@ -126,15 +125,15 @@ Khi phát triển hệ thống, cần chú ý các điểm sau
     1. HT nắm quyền tác giả các bản thiết kế và code của hệ thống.
     2. Nếu trong hệ thống có sử dụng những phần do người khác nắm quyền tác giả, bên trúng thầu có trách nhiệm đàm phán và trả các chi phí liên quan. Trong trường hợp này, bên trúng thầu phải báo trước thông tin và được sự chấp thuận của HT.
 
-### Bảo mật
+### Nghĩa vụ bảo mật <a name="confidentiality"></a>
 
 Bên trúng thầu phải bảo mật mọi thông tin thu được trong quá trình làm dự án, không được để lộ với bên thứ 3.
 
-### Tuân thủ luật pháp
+### Tuân thủ luật pháp <a name="compliance"></a>
 
 Bên trúng thầu phải tuân thủ mọi pháp luật liên quan đến nhận thầu dự án.
 
-### Thông tin liên hệ
+### Thông tin liên hệ <a name="inquiryCounter"></a>
 
 Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua bán công ty HT.
 
