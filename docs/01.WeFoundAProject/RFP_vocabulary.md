@@ -18,10 +18,10 @@
     8. [Nghĩa vụ bảo mật](#confidentiality)
     9. [Tuân thủ luật pháp](#compliance)
     10. [Thông tin liên hệ](#inquiryCounter)
-4. Quy định về nội dung công việc và sản phẩm
-    1. Nội dung công việc
-    2. Sản phẩm
-5. Yêu cầu về hệ thống
+4. [Nội dung công việc và sản phẩm](#workAndProduct)
+    1. [Nội dung công việc](#workContent)
+    2. [Sản phẩm](#productContent)
+5. [Yêu cầu về hệ thống](#systemRequirement)
     1. Yêu cầu tính năng
     2. Yêu cầu màn hình
     3. Yêu cầu về report
@@ -30,8 +30,8 @@
 6. [Yêu cầu về bảo mật](#securityRequirement)
     1. Chính sách bảo mật
     2. QUản lý bảo mật
-7. Yêu cầu về network
-8. Môi trường vận hành
+7. [Yêu cầu về network](#networkRequirement)
+8. [Môi trường vận hành](#environmentRequirement)
     1. Nơi đặt hệ thống
     2. Yêu cầu về môi trường server
     3. Yêu cầu về môi trường của người dùng
@@ -43,7 +43,7 @@
     4. Giám sát hệ thống
     5. Đối ứng trouble
     6. Quản lý server/network
-11. Các điều kiện khác
+11. [Các điều kiện khác](#otherRequirement)
     1. Xuất data
 
 ## 1. Tên dự án mời thầu <a name="projectName"></a>
@@ -137,9 +137,9 @@ Bên trúng thầu phải tuân thủ mọi pháp luật liên quan đến nhậ
 
 Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua bán công ty HT.
 
-## Quy định về nội dung công việc và sản phẩm
+## Nội dung công việc và sản phẩm <a name="workAndProduct"></a>
 
-### Nội dung công việc
+### Nội dung công việc <a name="workContent"></a>
 
 Nội dung công việc của gói thầu như mô tả dưới đây
 
@@ -160,14 +160,14 @@ Nội dung công việc của gói thầu như mô tả dưới đây
     * Cần thực hiện việc vận hành bảo trì để đảm bảo hệ thống hoạt động ổn định.
     * Báo cáo tình hình hoạt động của hệ thống, tình hình sử dụng của user theo định kỳ hàng tháng.
 
-### Sản phẩm
+### Sản phẩm <a name="productContent"></a>
 
 Hiện tại, dự kiến sản phẩm bàn giao gồm có những thành phần dưới đây.
 Sau khi quyết định công ty trúng thầu, cần bàn bạc kỹ hơn về danh sách sản phẩm, thời hạn bàn giao, hình thức bàn giao sản phầm...
 
 TBD
 
-## Yêu cầu hệ thống
+## Yêu cầu hệ thống <a name="systemRequirement"></a>
 
 ### Yêu cầu tính năng
 
@@ -185,18 +185,18 @@ TBD
 
 Cần thực hiện các biện pháp bảo mật để thông tin tích trữ trong hệ thống không bị lọt ra bên ngoài. Ngoài ra, hệ thống cần áp dụng SSL để đảm bảo an toàn trong việc truyền thông tin.
 
-### QUản lý bảo mật
+### Quản lý bảo mật
 
 Để đảm bảo duy trì security, hệ thống cần được update các security patch định kỳ.
 * Cần update các security patch dành cho OS, network firmware.
 * Cần thiết lập firewall để ngăn chặn xâm nhập.
 * DB chỉ được phép access từ local server. Có các biện pháp phòng chống virus, và thông báo cho các biên liên quan trong trường hợp bị nhiễm virus.
 
-## Yêu cầu về network
+## Yêu cầu về network <a name="networkRequirement"></a>
 
 * Cần sử dụng đường truyền đảm bảo tốc độ từ 2Mbps trở lên.
 
-## Môi trường vận hành
+## Môi trường vận hành <a name="environmentRequirement"></a>
 
 Yêu cầu về server và môi trường network như sau.
 
@@ -278,7 +278,7 @@ Khi có vấn đề xảy ra, cần liên lạc báo cáo tình hình cho ngư�
     1. Cần có biện pháp phục hồi hệ thống dễ dàng từ file backup bất kỳ.
     2. Khi nhận được yêu cầu phục hổi hệ thống từ backup, cần hoàn thành trong vòng 1 ngày (tới 18h ngày hôm sau). Trong trường hợp việc phục hồi hệ thống mất thời gian (ví dụ khôi phục phần cứng) thì cần báo cáo cho người phụ trách bên HT và được sự chấp thuận.
 
-## Các điều kiện khác
+## Các điều kiện khác <a name="otherRequirement"></a>
 
 ### Xuất data
 
