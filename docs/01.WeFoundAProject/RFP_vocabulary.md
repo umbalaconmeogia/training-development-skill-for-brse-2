@@ -27,7 +27,7 @@
     3. Yêu cầu về report
     4. Yêu cầu về data
     5. Yêu cầu về khả năng mở rộng
-6. Yêu cầu về bảo mật
+6. [Yêu cầu về bảo mật](#securityRequirement)
     1. Chính sách bảo mật
     2. QUản lý bảo mật
 7. Yêu cầu về network
@@ -35,12 +35,12 @@
     1. Nơi đặt hệ thống
     2. Yêu cầu về môi trường server
     3. Yêu cầu về môi trường của người dùng
-9. Release
-10. Bảo trì và vận hành
+9. [Data migration](#migrationRequirement)
+10. [Bảo trì và vận hành](#maintenanceRequirement)
     1. Đội ngũ vận hành
     2. Bảo trì định kỳ
-    3. Liên lạc
-    4. Giám sát
+    3. Giải đáp thắc mắc
+    4. Giám sát hệ thống
     5. Đối ứng trouble
     6. Quản lý server/network
 11. Các điều kiện khác
@@ -140,9 +140,34 @@ Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua 
 ## Quy định về nội dung công việc và sản phẩm
 
 ### Nội dung công việc
+
+Nội dung công việc của gói thầu như mô tả dưới đây
+
+1. Quản lý dự án
+    Lập Project Plan, và quản lý việc thực hiện theo Project Plan.
+    Để đảm bảo tiến độ và chất lượng của dự án, cần có tài liệu định nghĩa rõ ràng mục tiêu của từng phase và thực hiện theo các mục tiêu đó.
+2.  Thiết kế và phát triển
+    * Cần làm Requirement Definition xác định yêu cầu của hệ thống.
+    * Dựa trên RD, cần làm Basic Design định nghĩa các tính năng và phương thức thực hiện.
+    * Dựa trên BD, cần làm Detail Design, làm cơ sở cho việc phát triển và unit test.
+3. Test
+    * Đội phát triển cần thực hiện Intergration Testing, System Testing dể đảm bảo tính năng chạy đúng.
+    * Cần hỗ trợ khi HT thực hiện User Acceptance Testing.
+4. Release
+    * User training: Cần thực hiện training cho user và quản lý.
+    * Data migration: Trước khi đưa hệ thống vào vận hành, cần nhập danh sách thuật ngữ của các dự án có sẵn.
+5. Vận hành và bảo trì
+    * Cần thực hiện việc vận hành bảo trì để đảm bảo hệ thống hoạt động ổn định.
+    * Báo cáo tình hình hoạt động của hệ thống, tình hình sử dụng của user theo định kỳ hàng tháng.
+
 ### Sản phẩm
 
-## Yêu cầu về hệ thống
+Hiện tại, dự kiến sản phẩm bàn giao gồm có những thành phần dưới đây.
+Sau khi quyết định công ty trúng thầu, cần bàn bạc kỹ hơn về danh sách sản phẩm, thời hạn bàn giao, hình thức bàn giao sản phầm...
+
+TBD
+
+## Yêu cầu hệ thống
 
 ### Yêu cầu tính năng
 
@@ -154,38 +179,107 @@ Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua 
 
 ### Yêu cầu về khả năng mở rộng
 
-## Yêu cầu về bảo mật
+## 6. Yêu cầu về bảo mật <a name="securityRequirement"></a>
 
 ### Chính sách bảo mật
 
+Cần thực hiện các biện pháp bảo mật để thông tin tích trữ trong hệ thống không bị lọt ra bên ngoài. Ngoài ra, hệ thống cần áp dụng SSL để đảm bảo an toàn trong việc truyền thông tin.
+
 ### QUản lý bảo mật
+
+Để đảm bảo duy trì security, hệ thống cần được update các security patch định kỳ.
+* Cần update các security patch dành cho OS, network firmware.
+* Cần thiết lập firewall để ngăn chặn xâm nhập.
+* DB chỉ được phép access từ local server. Có các biện pháp phòng chống virus, và thông báo cho các biên liên quan trong trường hợp bị nhiễm virus.
 
 ## Yêu cầu về network
 
+* Cần sử dụng đường truyền đảm bảo tốc độ từ 2Mbps trở lên.
+
 ## Môi trường vận hành
+
+Yêu cầu về server và môi trường network như sau.
 
 ### Nơi đặt hệ thống
 
+Hệ thống được đặt ở data center bên ngoài công ty HT, cần được thiết lập các biện pháp bảo đảm an toàn security. Ngoài ra có các biện pháp đảm bảo hệ thống vẫn hoạt động trong trường hợp xảy ra động đất, hỏa hoạn hay các tai nạn khác.
+
 ### Yêu cầu về môi trường server
+
+Server cần có cấu hình đảm bảo hoạt động ổn định theo yêu cầu tính năng đề ra.
 
 ### Yêu cầu về môi trường của người dùng
 
-## Release
+Hệ thống bị giới hạn truy cập từ các IP address của các văn phòng của công ty HT.
 
-## Bảo trì và vận hành
+Hệ thống hoạt động trên môi trường web như sau:
+* Browser: Chrome, Safari.
+* Device: PC và smartphone.
+
+## Data migration <a name="migrationRequirement"></a>
+
+Trước khi đưa hệ thống vào vận hành, cần import danh sách thuật ngữ của các dự án đang có dưới định dạng file Excel. Có khoảng 20 dự án, mỗi dự án có khoảng 50 thuật ngữ.
+
+## Bảo trì và vận hành <a name="maintenanceRequirement"></a>
+
+Hệ thống cần đảm bảo hoạt động từ 6h tới 17:30 (giờ Việt Nam) các ngày trong tuần.
+Bên vận hành, bảo trì cần báo cáo các thông tin như sau:
 
 ### Đội ngũ vận hành
 
+1. Cần lập danh sách thành viên trong đội đối ứng khi có sự cố xảy ra, được HT chấp thuận.
+2. Cần có thông tin chi tiết về tên của người chịu trách nhiệm và key member, thông tin về kinh nghiệm của PIC.
+3. Người chịu trách nhiệm phải nắm rõ nghiệp vụ và máy móc của hệ thống này, có kinh nghiệm phát triển hệ thống từ 2 năm trở lên.
+4. Khi có thay đổi người chịu trách nhiệm hoặc key member, phải báo cáo trước 1 tháng và được sự chấp thuận của HT.
+5. Người chịu trách nhiệm và key member phải giao tiếp được bằng tiếng Nhật hoặc Anh.
+6. Khi hệ thống software, firmware có vấn đề nghiêm trọng về security, phải đối ứng như là một phần công việc của bảo trì.
+
 ### Bảo trì định kỳ
 
-### Liên lạc
+1. Việc bảo trì định kỳ server, network phải tiến hành vào ngày nghỉ.
+2. Phải giảm thiểu ảnh hưởng tới công việc của user ở mức thấp nhất khi tiến hành bảo trì định kỳ server, network.
+3. 1 năm phải tiến hành update security patch cho software, firmware 2 lần trở lên.
 
-### Giám sát
+### Giải đáp thắc mắc
+
+Cần giải đáp mọi thắc mắc liên quan đến vận hành, bảo trì từ người phụ trách của HT.
+
+### Giám sát hệ thống
+
+Cần thực hiện các biện pháp giám sát server, network cần thiết.
+Khi có vấn đề xảy ra, cần liên lạc báo cáo tình hình cho người phụ trách của HT trong khi tiến hành đối ứng.
 
 ### Đối ứng trouble
 
+* Khi xảy ra trouble, cần báo cáo tình hình thường xuyên trong quá trình đối ứng vấn đề. Sau khi giải quyết xong vấn đề, cần có báo cáo bằng văn bản.
+* Báo cáo bằng văn bản phải ghi rõ việc điều tra nguyên nhân, phương pháp xử lý, và cần được chấp nhận của người phụ trách của HT.
+
 ### Quản lý server/network
+
+1. Quản lý sự cố
+    1. Cần phân tích các event được monitoring, từ đó tìm ra các sự cố có khả năng phát sinh, báo cáo/bàn bạc với người phụ trách của HT về các biện pháp xử lý và thực hiện chúng.
+    2. Khi có vấn đề xảy ra, có thể thực hiện việc phục hồi hệ thống từ xa.
+2. Quản lý thời gian
+    Thời gian trên server, network, cũng như lịch vận hành của hệ thống được định nghĩa theo múi giờ Việt Nam.
+3. Backup
+    1. Cần có backup để có thể phục hồi hệ thống khi có sự cố.
+    2. Việc backup phải đảm bảo không làm ngừng hoạt động của hệ thống.
+    3. Cần có lịch cho việc backup.
+    4. Nếu backup thất bại, cần điều tra nguyên nhân và báo cáo cho HT.
+    5. Cường độ backup data.
+        * Full backup mỗi tuần 1 lần. Hàng ngày chỉ cần backup phần phát sinh mới.
+        * Bản backup được lưu trong 3 tháng.
+4. Backup access log
+    1. Backup access log theo từng ngày, lưu trên server.
+    2. Access log được lưu tối thiểu 1 tháng trên server, 1 năm phải được backup sang media khác tối thiểu 1 lần, và lưu trữ trong 3 năm.
+    3. Access log được lưu từ lúc bắt đầu vận hành hệ thống tới khi chấm dứt hợp đồng vận hành.
+    4. Kết quả phân tích log của server cần được xuất ra dưới dạng bảng biểu (Excel hoặc CSV).
+5. Restore
+    1. Cần có biện pháp phục hồi hệ thống dễ dàng từ file backup bất kỳ.
+    2. Khi nhận được yêu cầu phục hổi hệ thống từ backup, cần hoàn thành trong vòng 1 ngày (tới 18h ngày hôm sau). Trong trường hợp việc phục hồi hệ thống mất thời gian (ví dụ khôi phục phần cứng) thì cần báo cáo cho người phụ trách bên HT và được sự chấp thuận.
 
 ## Các điều kiện khác
 
 ### Xuất data
+
+Khi có yêu cầu từ HT về việc xuất data (ví dụ để chuyển sang phiên bản mới), cần phải xuất toàn bộ data ở dạng CSV và việc này không tính thêm chi phí. Cần phải kèm theo giải thích cho các hạng mục data được xuất ra.
