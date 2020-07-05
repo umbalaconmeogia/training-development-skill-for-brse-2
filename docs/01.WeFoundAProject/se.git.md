@@ -8,7 +8,12 @@
 * Repository (local): Nơi lưu trữ từng version trên máy tính mỗi khi commit.
 * Repository (server): Nơi lưu trữ trên server, do mọi người đẩy từ repository (local) lên.
 
-Ở đây, chúng ta chỉ giới thiệu vài tính năng cơ bản của git (dùng UI).
+Buổi hôm nay, chỉ học khái niệm về các thao tác cơ bản (và dùng sourcetree UI)
+* clone: Lần đầu tiên, kéo từ server về máy PC local.
+* diff, stage: Đánh dấu các thay đổi sẽ được commit.
+* commit: Lưu thay đổi vào repository (local).
+* push: Đẩy thay đổi từ repository (local) lên repository (server).
+* pull: Kéo thay đổi từ trên server về local.
 
 ## Các lệnh cơ bản
 
@@ -31,7 +36,7 @@
       ![clone url](material/cloneSample.png)
     </details>
 
-### Xác nhận code đã sửa đổi cần được commit (diff)
+### Đánh dấu các thay đổi sẽ được commit (diff, stage)
 
 <details>
   <summary>Diff</summary>
@@ -51,7 +56,39 @@
 
 ### Commit code (commit)
 
+<details>
+  <summary>Commit</summary>
+
+  ![git commit](material/sourcetreeCommit.png)
+</details>
+<details>
+  <summary>After commit</summary>
+
+  ![git commit history](material/sourcetreeCommitHistory.png)
+</details>
+<details>
+  <summary>Chỉ commit trên local repository, trên server chưa thay đổi</summary>
+
+  ![git commit history](material/gitCommitLocalNoServerChange.png)
+</details>
+
 ### Đẩy lên repository (push)
+
+<details>
+  <summary>Push lên server</summary>
+
+  ![git commit history](material/gitCommitPush.png)
+</details>
+<details>
+  <summary>Trong history có đánh dấu đã đẩy lên server</summary>
+
+  ![git commit history](material/gitCommitPushHistory.png)
+</details>
+<details>
+  <summary>Trên server có sự thay đổi</summary>
+
+  ![git commit history](material/gitCommitPushServerChanged.png)
+</details>
 
 ### Kéo về (pull)
 
