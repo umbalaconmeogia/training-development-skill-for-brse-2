@@ -92,6 +92,15 @@ Buổi hôm nay, chỉ học khái niệm về các thao tác cơ bản (và dù
 
 ### Kéo về (pull)
 
+<details>
+  <summary>Trên server có sự thay đổi</summary>
+
+  ![git commit history](material/gitMakeChangeOnServer.png)
+  Trên local không đổi.
+  ![git commit history](material/gitMakeChangeOnServerNoChangeLocal.png)
+</details>
+
+
 <hr />
 Sau này sẽ học dần dần
 
