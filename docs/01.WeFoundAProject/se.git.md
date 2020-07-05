@@ -36,7 +36,7 @@ Buổi hôm nay, chỉ học khái niệm về các thao tác cơ bản (và dù
       ![clone url](material/cloneSample.png)
     </details>
 
-### Đánh dấu các thay đổi sẽ được commit (diff, stage)
+### Đánh dấu các thay đổi sẽ được commit (diff, add)
 
 <details>
   <summary>Diff</summary>
