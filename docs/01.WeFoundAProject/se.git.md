@@ -25,8 +25,13 @@ Buổi hôm nay, chỉ học khái niệm về các thao tác cơ bản (và dù
 
     ![clone url](material/cloneUrl.png)
     </details>
+2. Clone by sourcetree
+    <details>
+      <summary>Clone by sourcetree</summary>
 
-2. Run clone command
+      ![clone url](material/sourcetreeClone.png)
+    </details>
+3. Run clone command
     ```shell
     git clone https://github.com/umbalaconmeogia/training-development-skill-for-brse-2.git
     ```
