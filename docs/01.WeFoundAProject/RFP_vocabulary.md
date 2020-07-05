@@ -165,17 +165,67 @@ Nội dung công việc của gói thầu như mô tả dưới đây
 Hiện tại, dự kiến sản phẩm bàn giao gồm có những thành phần dưới đây.
 Sau khi quyết định công ty trúng thầu, cần bàn bạc kỹ hơn về danh sách sản phẩm, thời hạn bàn giao, hình thức bàn giao sản phầm...
 
-TBD
+Danh sách sản phẩm
+1. Quản lý dự án
+    1. Project plan
+    2. Process management.
+    3. Meeting minutes.
+2. Design and development
+    1. Requirement definition
+    2. Basic design, detail design.
+    3. Unit testing specification and UT report.
+    4. Program source code, environment configuration document.
+    5. Hardware (if exist).
+    6. Software (including middle ware).
+3. Testing
+    1. Test plan
+    2. Test result/report
+4. System migration
+    1. Migration plan and report.
+    2. User manual
+5. Operation and maintenance
+    1. Operation manual
+    2. Operation report
+
+Định dạng output: *TBD*
 
 ## Yêu cầu hệ thống <a name="systemRequirement"></a>
 
 ### Yêu cầu tính năng
 
+1. Tính năng chung
+    1. Login
+    2. Hiển thị thuật ngữ của dự án.
+2. Tính năng cho BrSE
+    1. Đăng ký thuật ngữ dự án (của khách hàng).
+    2. Edit thông tin thuật ngữ.
+    3. Xuất danh sách thuật ngữ của dự án.
+3. Tính năng cho Comtor
+    1. Đăng ký thuật ngữ (của nội bộ dự án).
+    2. Edit thông tin thuật ngữ.
+    3. Xuất danh sách thuật ngữ của dự án.
+4. Tính năng cho admin
+    1. Quản lý người dùng.
+    2. Quản lý thông tin dự án.
+
 ### Yêu cầu màn hình
+
+1. Màn hình quản lý thuật ngữ
+    1. Đăng ký thuật ngữ.
+    2. Xem thông tin thuật ngữ.
+    3. Edit thuật ngữ.
+    4. Danh sách thuật ngữ.
+2. Xuất data
+    1. Xuất danh sách thuật ngữ.
 
 ### Yêu cầu về report
 
+Không có.
+
 ### Yêu cầu về data
+
+TBD
+Định nghĩa vài loại data, data type, format.
 
 ### Yêu cầu về khả năng mở rộng
 
