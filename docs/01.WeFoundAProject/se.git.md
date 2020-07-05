@@ -99,6 +99,16 @@ Buổi hôm nay, chỉ học khái niệm về các thao tác cơ bản (và dù
   Trên local không đổi.
   ![git commit history](material/gitMakeChangeOnServerNoChangeLocal.png)
 </details>
+<details>
+  <summary>Pull from server</summary>
+
+  ![git commit history](material/gitMakeChangeOnServerPull.png)
+</details>
+<details>
+  <summary>Change on local after pull</summary>
+
+  ![git commit history](material/gitMakeChangeOnServerAfterPull.png)
+</details>
 
 
 <hr />
