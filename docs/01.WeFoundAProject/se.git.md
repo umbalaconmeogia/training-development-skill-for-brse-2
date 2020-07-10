@@ -147,14 +147,14 @@ sẽ out ra KQ (VD dưới đây là đang ở branch "OptimizeSrcCode")
 
 ### Branch: master
 
-#### Git push
+#### *Git push
 Ban đầu khi "git init" rồi "git push" thì default sẽ up lên master (của remote repo).
 Hoặc câu lệnh git đầy đủ là:
 ```shell
     git push -u origin master
 ```
 
-#### Git pull
+#### *Git pull
 Đang thao tác ở branch khác master mà muốn pull src code của branch đó -> master thì gõ:
 ```shell
     git pull origin master
