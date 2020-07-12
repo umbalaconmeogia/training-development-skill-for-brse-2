@@ -53,6 +53,7 @@ Lúc này chương trình sẽ chạy, và cái ta nhìn thấy đầu tiên là
 
 Tên mặc định là `My Application`
 * Đổi tên trong `app/config/web.php`
+  Xem nội dung thay đổi code [ở đây](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/commit/9adfd0ce4c0148701a344f19d653fe019426c646#diff-4417df72dc0a3136040400927ecfa5daR10)
   ```php
   $config = [
       'id' => 'basic',
@@ -68,6 +69,7 @@ Tên mặc định là `My Application`
   ```
   ![change app name](material/changeAppName.png)
 * Đổi text trong footer trong file `app/views/layouts/main.php`.
+  Xem nội dung thay đổi code [ở đây](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/commit/9adfd0ce4c0148701a344f19d653fe019426c646#diff-1dc80ad43ca49b41fb43d54a0042e629R72)
   Code cũ
   ```php
   <footer class="footer">
@@ -92,7 +94,8 @@ Tên mặc định là `My Application`
 
 ### Thay đổi menu trong file `app/views/layout/main.php`
 
-Ẩn menu `Home`, `About`
+Ẩn menu item `Home`, `About`.
+Xem nội dung thay đổi code [ở đây](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/commit/9adfd0ce4c0148701a344f19d653fe019426c646#diff-1dc80ad43ca49b41fb43d54a0042e629R41)
 ```php
     echo Nav::widget([
         'options' => ['class' => 'navbar-nav navbar-right'],
@@ -105,6 +108,7 @@ Tên mặc định là `My Application`
 ### Đổi nội dung trang top trong `app/views/site/index.php`
 
 Xóa hết sample text ở trang top (site/index).
+Nội dung thay đổi code [ở đây](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/commit/9adfd0ce4c0148701a344f19d653fe019426c646#diff-ecf7e706799b158fdbe2525fde943d6e)
 ```php
 <?php
 
