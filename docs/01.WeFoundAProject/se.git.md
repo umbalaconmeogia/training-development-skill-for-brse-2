@@ -126,13 +126,60 @@ Tham khảo trên [viblo](https://viblo.asia/p/nhung-dieu-khong-phai-ai-cung-noi
 
 ## Branch
 
-### Create branch
+### Khái niệm
+![branch introduction](material/branches.png)
+Có 2 loại branch:
+1) master: là src code chính để release.
+2) khác master: dùng cho các mục đích khác, VD như:
+* up src code theo mục đích riêng, khác với master. VD: up lên branch "mac-docker", còn master là docker cho win.
+* mỗi DEVs sau khi edit src code sẽ up lên branch riêng của mình. Cần merge branch nào vô master để release thì DEV đó sẽ click "Pull request".
 
-### Checkout
+### Lệnh Git
+Để biết đang thao tác Git ở branch nào thì dùng lệnh:
+```shell
+    git branch
+```
+sẽ out ra KQ (VD dưới đây là đang ở branch "OptimizeSrcCode")
+```shell
+  * OptimizeSrcCode
+  master
+```
+
+### Branch: master
+
+#### *Git push
+Ban đầu khi "git init" rồi "git push" thì default sẽ up lên master (của remote repo).
+Hoặc câu lệnh git đầy đủ là:
+```shell
+    git push -u origin master
+```
+
+#### *Git pull
+Đang thao tác ở branch khác master mà muốn pull src code của branch đó -> master thì gõ:
+```shell
+    git pull origin master
+```
+
+### Branch: khác master
+
+#### *Create branch & checkout
+Lệnh git vừa create vừa checkout 1 branch mới (VD: "OptimizeSrcCode") là:
+```shell
+    git checkout -b OptimizeSrcCode
+```
+
+#### *Git push
+Lệnh git up src code từ local lên branch "OptimizeSrcCode" (của remote repo):
+```shell
+    git push --set-upstream origin OptimizeSrcCode
+```
 
 ## Release
 
 ### Create pull request
+![pull request](material/pullRequest.png)
+Cần merge branch nào vô master để release thì DEV đó sẽ click "Pull request".
+Sau đó cần admin Git approve "Pull request" đó. 
 
 ### Merge branch
 
