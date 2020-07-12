@@ -52,9 +52,74 @@ Lúc này chương trình sẽ chạy, và cái ta nhìn thấy đầu tiên là
 ### Đổi tên application
 
 Tên mặc định là `My Application`
-* Đổi tên trong `config/web.php`
-* Đổi text trong footer.
+* Đổi tên trong `app/config/web.php`
+  ```php
+  $config = [
+      'id' => 'basic',
+      'basePath' => dirname(__DIR__),
+      'bootstrap' => ['log'],
+      'name' => 'Project Term', // <= Set application name here
+      'aliases' => [
+          '@bower' => '@vendor/bower-asset',
+          '@npm'   => '@vendor/npm-asset',
+      ],
+      // Other config
+  ],
+  ```
+  ![change app name](material/changeAppName.png)
+* Đổi text trong footer trong file `app/views/layouts/main.php`.
+  Code cũ
+  ```php
+  <footer class="footer">
+      <div class="container">
+          <p class="pull-left">&copy; My Company <?= date('Y') ?></p>
+
+          <p class="pull-right"><?= Yii::powered() ?></p>
+      </div>
+  </footer>
+  ```
+  Code mới
+  ```php
+  <footer class="footer">
+      <div class="container">
+          <p class="pull-left">&copy; <?= Yii::$app->name ?> <?= date('Y') ?></p>
+
+          <p class="pull-right"><?= Yii::powered() ?></p>
+      </div>
+  </footer>
+  ```
+  ![change footer](material/changeFooter.png)
 
 ### Thay đổi menu trong file `app/views/layout/main.php`
 
+Ẩn menu `Home`, `About`
+```php
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => [
+//            ['label' => 'Home', 'url' => ['/site/index']],
+//            ['label' => 'About', 'url' => ['/site/about']],
+            ['label' => 'Contact', 'url' => ['/site/contact']],
+```
+
 ### Đổi nội dung trang top trong `app/views/site/index.php`
+
+Xóa hết sample text ở trang top (site/index).
+```php
+<?php
+
+/* @var $this yii\web\View */
+
+$this->title = 'My Yii Application';
+?>
+<div class="site-index">
+
+    <div class="jumbotron">
+        <h1><?= Yii::$app->name ?></h1>
+
+        <p class="lead">You have successfully created your Yii-powered application.</p>
+    </div>
+
+</div>
+```
+![site/index](material/changeTopPage.png)
