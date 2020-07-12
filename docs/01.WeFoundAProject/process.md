@@ -46,7 +46,11 @@ Nói một cách nghiêm ngặt thì RFP chỉ là tài liệu giới thiệu c�
 Khi nhận được yêu cầu về dự án, thường chúng ta phải làm một bản proposal, với nội dung chủ yếu sau:
 * Tóm tắt các điểm quan trọng của proposal.
 * Giới thiệu về công ty mình, năng lực, kinh nghiệm.
-* Đưa ra các giải pháp trả giải quyết cho các vấn đề quan trọng đặt ra trong RFP.
+* Đưa ra các giải pháp giải quyết cho các vấn đề quan trọng đặt ra trong RFP.
+  * mục đích
+  * nêu vấn đề
+  * giải pháp
+  * giải thích tại sao chọn giải pháp đó
 * Đưa ra estimation (dự toán), schedule, tổ chức cho dự án.
 
 Tất nhiên, các thông tin ở thời điểm này chỉ mang tính tương đối.

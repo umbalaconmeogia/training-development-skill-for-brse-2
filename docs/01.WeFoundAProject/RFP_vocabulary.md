@@ -12,7 +12,7 @@
     2. [Đề xuất lịch phát triển](#proposeSchedule)
     3. [Đề xuất tổ chức của đội phát triển](#proposeOrganization)
     4. [Về việc thay đổi người chịu trách nhiệm](#changePIC)
-    5. [Về việc trả lời câu hỏi từ HT](#inquiryFromHT)
+    5. [Về việc trả lời câu hỏi từ FOS](#inquiryFromFOS)
     6. [Quy thuộc trách nhiệm](#responsibility)
     7. [Về quyền sở hữu và quyền tác giả](#ownershipAndCopyright)
     8. [Nghĩa vụ bảo mật](#confidentiality)
@@ -54,7 +54,7 @@ Xây dựng và vận hành hệ thống quản lý từ vựng cho các dự á
 
 ### 2.1 Mục đích <a name="purpose"></a>
 
-Công ty HyTech (gọi tắt là HT) là công ty chuyên làm outsourcing trong lĩnh vực phát triển phần mềm cho các khách hàng nước ngoài. Các khách hàng của công ty nằm ở nhiều nơi trên thế giới, sử dụng nhiều ngôn ngữ khác nhau như tiếng Anh, Nhật...
+Công ty HyTech (gọi tắt là FOS) là công ty chuyên làm outsourcing trong lĩnh vực phát triển phần mềm cho các khách hàng nước ngoài. Các khách hàng của công ty nằm ở nhiều nơi trên thế giới, sử dụng nhiều ngôn ngữ khác nhau như tiếng Anh, Nhật...
 
 Các tài liệu nhận từ phía khách hàng thường là tiếng nước ngoài, trong đó có nhiều từ chuyên môn có ý nghĩa đặc biệt khác với nghĩa thông thường, mà ngay cả người nước sở tại, nếu không được giải thích cũng sẽ không hiểu chính xác. Điều này sẽ gây khó khăn cho đội ngũ BrSE và Comtor trong việc hiểu và dịch đúng nội dung tài liệu dự án.
 
@@ -95,7 +95,7 @@ việc xây dựng và đưa hệ thống vào vận hành, do bên nhận thầ
 
 ### Đề xuất lịch phát triển <a name="proposeSchedule"></a>
 
-1 tuần sau khi trúng thầu, bên nhận thầu phải đưa ra lịch phát triển hệ thống, và được quản lý của HT chấp nhận.
+1 tuần sau khi trúng thầu, bên nhận thầu phải đưa ra lịch phát triển hệ thống, và được quản lý của FOS chấp nhận.
 
 ### Báo cáo tổ chức của đội phát triển <a name="proposeOrganization"></a>
 
@@ -103,13 +103,13 @@ việc xây dựng và đưa hệ thống vào vận hành, do bên nhận thầ
 
 ### Về việc thay đổi người chịu trách nhiệm <a name="changePIC"></a>
 
-Trong những trường hợp sau đây, nếu HT yêu cầu đổi người chịu trách nhiệm dự án, đội phát triển phải đưa ra người thay thế trong vòng 1 tuần khi có yêu cầu (và người thay thể phải được chấp thuận bởi HT).
+Trong những trường hợp sau đây, nếu FOS yêu cầu đổi người chịu trách nhiệm dự án, đội phát triển phải đưa ra người thay thế trong vòng 1 tuần khi có yêu cầu (và người thay thể phải được chấp thuận bởi FOS).
 1. Lịch phát triển bị chậm tiến độ 1 tuần trở lên, và sau đó 1 tuần không thể khắc phục (trừ trường hợp bất khả kháng như tai nạn hay yếu tố bên ngoài).
-2. HT phát hiện vấn đề, yêu cầu khắc phục nhưng không được xử lý thỏa đáng.
+2. FOS phát hiện vấn đề, yêu cầu khắc phục nhưng không được xử lý thỏa đáng.
 
-### Về việc trả lời câu hỏi từ HT <a name="inquiryFromHT"></a>
+### Về việc trả lời câu hỏi từ FOS <a name="inquiryFromFOS"></a>
 
-Đội phát triển phải trả lời những câu hỏi do người đại diện bên HT đưa ra.
+Đội phát triển phải trả lời những câu hỏi do người đại diện bên FOS đưa ra.
 
 ### Quy thuộc trách nhiệm <a name="responsibility"></a>
 
@@ -122,8 +122,8 @@ Khi phát triển hệ thống, cần chú ý các điểm sau
 1. Quyền sở hữu
     Nếu sử dụng những sản phẩm có quyền sở hữu trí tuệ thuộc bên thứ 3, thì bên trúng thầu chịu mọi trách nhiệm đàm phán liên quan.
 2. Quyền tác giả
-    1. HT nắm quyền tác giả các bản thiết kế và code của hệ thống.
-    2. Nếu trong hệ thống có sử dụng những phần do người khác nắm quyền tác giả, bên trúng thầu có trách nhiệm đàm phán và trả các chi phí liên quan. Trong trường hợp này, bên trúng thầu phải báo trước thông tin và được sự chấp thuận của HT.
+    1. FOS nắm quyền tác giả các bản thiết kế và code của hệ thống.
+    2. Nếu trong hệ thống có sử dụng những phần do người khác nắm quyền tác giả, bên trúng thầu có trách nhiệm đàm phán và trả các chi phí liên quan. Trong trường hợp này, bên trúng thầu phải báo trước thông tin và được sự chấp thuận của FOS.
 
 ### Nghĩa vụ bảo mật <a name="confidentiality"></a>
 
@@ -135,7 +135,7 @@ Bên trúng thầu phải tuân thủ mọi pháp luật liên quan đến nhậ
 
 ### Thông tin liên hệ <a name="inquiryCounter"></a>
 
-Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua bán công ty HT.
+Mọi hỏi đáp liên quan đến việc đấu thầu, liên hệ Phòng mua bán công ty FOS.
 
 ## Nội dung công việc và sản phẩm <a name="workAndProduct"></a>
 
@@ -152,7 +152,7 @@ Nội dung công việc của gói thầu như mô tả dưới đây
     * Dựa trên BD, cần làm Detail Design, làm cơ sở cho việc phát triển và unit test.
 3. Test
     * Đội phát triển cần thực hiện Intergration Testing, System Testing dể đảm bảo tính năng chạy đúng.
-    * Cần hỗ trợ khi HT thực hiện User Acceptance Testing.
+    * Cần hỗ trợ khi FOS thực hiện User Acceptance Testing.
 4. Release
     * User training: Cần thực hiện training cho user và quản lý.
     * Data migration: Trước khi đưa hệ thống vào vận hành, cần nhập danh sách thuật ngữ của các dự án có sẵn.
@@ -252,7 +252,7 @@ Yêu cầu về server và môi trường network như sau.
 
 ### Nơi đặt hệ thống
 
-Hệ thống được đặt ở data center bên ngoài công ty HT, cần được thiết lập các biện pháp bảo đảm an toàn security. Ngoài ra có các biện pháp đảm bảo hệ thống vẫn hoạt động trong trường hợp xảy ra động đất, hỏa hoạn hay các tai nạn khác.
+Hệ thống được đặt ở data center bên ngoài công ty FOS, cần được thiết lập các biện pháp bảo đảm an toàn security. Ngoài ra có các biện pháp đảm bảo hệ thống vẫn hoạt động trong trường hợp xảy ra động đất, hỏa hoạn hay các tai nạn khác.
 
 ### Yêu cầu về môi trường server
 
@@ -260,7 +260,7 @@ Server cần có cấu hình đảm bảo hoạt động ổn định theo yêu 
 
 ### Yêu cầu về môi trường của người dùng
 
-Hệ thống bị giới hạn truy cập từ các IP address của các văn phòng của công ty HT.
+Hệ thống bị giới hạn truy cập từ các IP address của các văn phòng của công ty FOS.
 
 Hệ thống hoạt động trên môi trường web như sau:
 * Browser: Chrome, Safari.
@@ -277,10 +277,10 @@ Bên vận hành, bảo trì cần báo cáo các thông tin như sau:
 
 ### Đội ngũ vận hành
 
-1. Cần lập danh sách thành viên trong đội đối ứng khi có sự cố xảy ra, được HT chấp thuận.
+1. Cần lập danh sách thành viên trong đội đối ứng khi có sự cố xảy ra, được FOS chấp thuận.
 2. Cần có thông tin chi tiết về tên của người chịu trách nhiệm và key member, thông tin về kinh nghiệm của PIC.
 3. Người chịu trách nhiệm phải nắm rõ nghiệp vụ và máy móc của hệ thống này, có kinh nghiệm phát triển hệ thống từ 2 năm trở lên.
-4. Khi có thay đổi người chịu trách nhiệm hoặc key member, phải báo cáo trước 1 tháng và được sự chấp thuận của HT.
+4. Khi có thay đổi người chịu trách nhiệm hoặc key member, phải báo cáo trước 1 tháng và được sự chấp thuận của FOS.
 5. Người chịu trách nhiệm và key member phải giao tiếp được bằng tiếng Nhật hoặc Anh.
 6. Khi hệ thống software, firmware có vấn đề nghiêm trọng về security, phải đối ứng như là một phần công việc của bảo trì.
 
@@ -292,22 +292,22 @@ Bên vận hành, bảo trì cần báo cáo các thông tin như sau:
 
 ### Giải đáp thắc mắc
 
-Cần giải đáp mọi thắc mắc liên quan đến vận hành, bảo trì từ người phụ trách của HT.
+Cần giải đáp mọi thắc mắc liên quan đến vận hành, bảo trì từ người phụ trách của FOS.
 
 ### Giám sát hệ thống
 
 Cần thực hiện các biện pháp giám sát server, network cần thiết.
-Khi có vấn đề xảy ra, cần liên lạc báo cáo tình hình cho người phụ trách của HT trong khi tiến hành đối ứng.
+Khi có vấn đề xảy ra, cần liên lạc báo cáo tình hình cho người phụ trách của FOS trong khi tiến hành đối ứng.
 
 ### Đối ứng trouble
 
 * Khi xảy ra trouble, cần báo cáo tình hình thường xuyên trong quá trình đối ứng vấn đề. Sau khi giải quyết xong vấn đề, cần có báo cáo bằng văn bản.
-* Báo cáo bằng văn bản phải ghi rõ việc điều tra nguyên nhân, phương pháp xử lý, và cần được chấp nhận của người phụ trách của HT.
+* Báo cáo bằng văn bản phải ghi rõ việc điều tra nguyên nhân, phương pháp xử lý, và cần được chấp nhận của người phụ trách của FOS.
 
 ### Quản lý server/network
 
 1. Quản lý sự cố
-    1. Cần phân tích các event được monitoring, từ đó tìm ra các sự cố có khả năng phát sinh, báo cáo/bàn bạc với người phụ trách của HT về các biện pháp xử lý và thực hiện chúng.
+    1. Cần phân tích các event được monitoring, từ đó tìm ra các sự cố có khả năng phát sinh, báo cáo/bàn bạc với người phụ trách của FOS về các biện pháp xử lý và thực hiện chúng.
     2. Khi có vấn đề xảy ra, có thể thực hiện việc phục hồi hệ thống từ xa.
 2. Quản lý thời gian
     Thời gian trên server, network, cũng như lịch vận hành của hệ thống được định nghĩa theo múi giờ Việt Nam.
@@ -315,7 +315,7 @@ Khi có vấn đề xảy ra, cần liên lạc báo cáo tình hình cho ngư�
     1. Cần có backup để có thể phục hồi hệ thống khi có sự cố.
     2. Việc backup phải đảm bảo không làm ngừng hoạt động của hệ thống.
     3. Cần có lịch cho việc backup.
-    4. Nếu backup thất bại, cần điều tra nguyên nhân và báo cáo cho HT.
+    4. Nếu backup thất bại, cần điều tra nguyên nhân và báo cáo cho FOS.
     5. Cường độ backup data.
         * Full backup mỗi tuần 1 lần. Hàng ngày chỉ cần backup phần phát sinh mới.
         * Bản backup được lưu trong 3 tháng.
@@ -326,10 +326,10 @@ Khi có vấn đề xảy ra, cần liên lạc báo cáo tình hình cho ngư�
     4. Kết quả phân tích log của server cần được xuất ra dưới dạng bảng biểu (Excel hoặc CSV).
 5. Restore
     1. Cần có biện pháp phục hồi hệ thống dễ dàng từ file backup bất kỳ.
-    2. Khi nhận được yêu cầu phục hổi hệ thống từ backup, cần hoàn thành trong vòng 1 ngày (tới 18h ngày hôm sau). Trong trường hợp việc phục hồi hệ thống mất thời gian (ví dụ khôi phục phần cứng) thì cần báo cáo cho người phụ trách bên HT và được sự chấp thuận.
+    2. Khi nhận được yêu cầu phục hổi hệ thống từ backup, cần hoàn thành trong vòng 1 ngày (tới 18h ngày hôm sau). Trong trường hợp việc phục hồi hệ thống mất thời gian (ví dụ khôi phục phần cứng) thì cần báo cáo cho người phụ trách bên FOS và được sự chấp thuận.
 
 ## Các điều kiện khác <a name="otherRequirement"></a>
 
 ### Xuất data
 
-Khi có yêu cầu từ HT về việc xuất data (ví dụ để chuyển sang phiên bản mới), cần phải xuất toàn bộ data ở dạng CSV và việc này không tính thêm chi phí. Cần phải kèm theo giải thích cho các hạng mục data được xuất ra.
+Khi có yêu cầu từ FOS về việc xuất data (ví dụ để chuyển sang phiên bản mới), cần phải xuất toàn bộ data ở dạng CSV và việc này không tính thêm chi phí. Cần phải kèm theo giải thích cho các hạng mục data được xuất ra.
