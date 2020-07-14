@@ -69,3 +69,7 @@ Học viên sẽ được thực hành các kiến thức về
   * XSS, CSRF
   * RBAC
   * Pen test
+
+## External business knowledge
+
+* Address in Japan
