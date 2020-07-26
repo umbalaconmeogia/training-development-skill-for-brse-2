@@ -52,3 +52,19 @@ Model về cơ bản sẽ gồm các thành phần sau:
 
 ## Validation and massive assign
 
+Function [rules()](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/blob/master/src/app/models/LoginForm.php#L26) là nơi định nghĩa validation.
+Nó mô tả các điều kiện attribute phải thỏa mãn.
+
+Khi gọi tới model->validate() function, nó sẽ căn cứ vào rules() để check các điều kiện attribute phải thỏa mãn. Nếu không thỏa mãn, nó sẽ báo lỗi (trả về kết quả hàm validate() là false).
+
+Thử một vài [core validate](https://www.yiiframework.com/doc/guide/2.0/en/tutorial-core-validators)
+* required
+* email
+* string ['username', 'string', 'length' => [4, 24]]
+
+Ngoài các core validator, developer có thể đinh nghĩa thêm các vadidator khác.
+Ví dụ như [LoginForm#validatePassword()](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/blob/master/src/app/models/LoginForm.php#L34)
+
+Massive assign
+Khi một attribute được xem là safe, thì nó có thể được gán bằng massige assign.
+Chẳng hạn như dùng trong lệnh model->load()
