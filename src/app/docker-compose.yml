@@ -11,6 +11,8 @@ services:
   pgsql:
     image: postgres:9.5
     container_name: project_term_sql
+    ports:
+      - '5462:5432'    
     environment:
       - POSTGRES_DB=project_term
       - POSTGRES_USER=project_term_user
