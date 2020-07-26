@@ -73,3 +73,4 @@ Học viên sẽ được thực hành các kiến thức về
 ## External business knowledge
 
 * Address in Japan
+* Estimation https://www.tutorialspoint.com/estimation_techniques/index.htm
