@@ -28,6 +28,7 @@ class SampleModel extends Model
             ['stringField', 'trim'],
             ['emailField', 'email'],
             ['password', 'validatePassword'],
+            ['dateField', 'safe'],
         ];
     }
 

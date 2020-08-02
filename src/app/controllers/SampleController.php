@@ -17,6 +17,12 @@ class SampleController extends Controller
     {
         $model = new SampleModel();
 
+        // $sampleModelArray = Yii::$app->request->post('SampleModel');
+        // print_r($sampleModelArray);
+        // echo "<br /><br />";
+        // $model->attributes = $sampleModelArray;
+        // print_r($model->attributes);die;
+
         if ($model->load(Yii::$app->request->post())) { // Has form value suport via POST method.
             if ($model->validate()) {
                 return $this->render('confirm', [
@@ -24,6 +30,7 @@ class SampleController extends Controller
                 ]);
             }
         }
+
         return $this->render('input', [
             'model' => $model,
         ]);
@@ -33,11 +40,9 @@ class SampleController extends Controller
     {
         $model = new SampleModel();
 
-        if (!$model->load(Yii::$app->request->post()) || !$model->validate()) {
-            print_r($model->attirbutes);
-        }
+        $model->attributes = Yii::$app->request->post('SampleModel');
 
-        return $this->render('input', [
+        return $this->render('register', [
             'model' => $model,
         ]);
     }

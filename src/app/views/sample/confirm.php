@@ -11,7 +11,7 @@ use yii\widgets\DetailView;
 <h1>Input</h1>
 
 <?php $form = ActiveForm::begin([
-    'action' => 'register',
+    'action' => ['register'],
 ]) ?>
 
     <?= DetailView::widget([

@@ -15,7 +15,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'requiredField')->textInput(['autofocus' => true]) ?>
 
-    <?= $form->field($model, 'gender')->dropDownList([
+    <?= $form->field($model, 'gender')->radioList([
         1 => 'Male',
         2 => 'Female',
     ]) ?>
@@ -33,7 +33,7 @@ use yii\widgets\ActiveForm;
     <?= $form->field($model, 'notSafeField')->textInput() ?>
 
     <div class="form-group">
-        <?= Html::submitButton('Submit') ?>
+        <?= Html::submitButton('Confirm') ?>
     </div>
 
 <?php ActiveForm::end(); ?>

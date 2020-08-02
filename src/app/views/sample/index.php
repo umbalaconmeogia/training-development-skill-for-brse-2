@@ -11,7 +11,9 @@ use yii\helpers\Html;
 <br />
 <?= 'It contains links to several demo' ?>
 <ul>
-    <li><a href="?r=sample/input">Input form</a></li>
+    <li>
+        <a href="?r=sample/input">Input form</a>
+    </li>
     <?=
         Html::tag('li',
             Html::a('Input form', ['input'])
