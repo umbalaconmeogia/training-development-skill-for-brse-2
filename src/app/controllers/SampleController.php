@@ -19,7 +19,7 @@ class SampleController extends Controller
 
         if ($model->load(Yii::$app->request->post())) { // Has form value suport via POST method.
             if ($model->validate()) {
-                return $this->render('inputConfirm', [
+                return $this->render('confirm', [
                     'model' => $model,
                 ]);
             }
@@ -28,4 +28,18 @@ class SampleController extends Controller
             'model' => $model,
         ]);
     }
+
+    public function actionRegister()
+    {
+        $model = new SampleModel();
+
+        if (!$model->load(Yii::$app->request->post()) || !$model->validate()) {
+            print_r($model->attirbutes);
+        }
+
+        return $this->render('input', [
+            'model' => $model,
+        ]);
+    }
+
 }

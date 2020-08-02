@@ -24,7 +24,7 @@ class SampleModel extends Model
             ['requiredField', 'required'],
             [['gender', 'doubleField'], 'number'],
             ['gender', 'integer'],
-            ['stringField', 'string', 'length' => [[4, 10]]],
+            ['stringField', 'string', 'length' => [4, 10]],
             ['stringField', 'trim'],
             ['emailField', 'email'],
             ['password', 'validatePassword'],
@@ -45,14 +45,10 @@ class SampleModel extends Model
     public function validatePassword($attribute, $params)
     {
         if (!$this->hasErrors()) {
-            print_r($attribute);
-            print_r($params);
-            die;
-            // $user = $this->getUser();
-
-            // if (!$user || !$user->validatePassword($this->password)) {
-            //     $this->addError($attribute, 'Incorrect username or password.');
-            // }
+            $length = strlen($this->password);
+            if ($length < 4) {
+                $this->addError($attribute, 'Password should have at least 4 characters.');
+            }
         }
     }
 }
