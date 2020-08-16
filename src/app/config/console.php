@@ -30,6 +30,7 @@ $config = [
                     'levels' => ['error', 'warning', 'info', 'trace'],
                     'logVars' => [],
                     'categories' => ['yii\db\*'],
+                    'logFile' => '@app/runtime/logs/sql.log',
                 ],
             ],
         ],

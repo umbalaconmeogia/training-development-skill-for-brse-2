@@ -44,6 +44,7 @@ php yii migrate/create create_term_table
             'levels' => ['error', 'warning', 'info', 'trace'],
             'logVars' => [],
             'categories' => ['yii\db\*'],
+            'logFile' => '@app/runtime/logs/sql.log',
         ],
     ],
 ],
