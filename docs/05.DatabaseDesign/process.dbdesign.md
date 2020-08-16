@@ -6,6 +6,9 @@
 * Không có căn cứ để tạo tables, relations...
 * Không có căn cứ để review/check.
 
+Thiết kế ban đầu của database (có thiếu sót).
+![ERD](material/DBdesign-first.png)
+
 ## Một vài quan điểm về thiết kế DB
 
 * Data key
