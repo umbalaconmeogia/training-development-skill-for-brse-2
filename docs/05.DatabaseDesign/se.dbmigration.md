@@ -30,6 +30,24 @@ php yii migrate/create create_term_table
 
 * Xem log sql
 * Config log
+```php
+'log' => [
+    'targets' => [
+        [
+            'class' => 'yii\log\FileTarget',
+            'levels' => ['error', 'warning', 'info', 'trace'],
+            'logVars' => [],
+            'except' => ['yii\db\*'],
+        ],
+        [
+            'class' => 'yii\log\FileTarget',
+            'levels' => ['error', 'warning', 'info', 'trace'],
+            'logVars' => [],
+            'categories' => ['yii\db\*'],
+        ],
+    ],
+],
+```
 
 ## 5. Connect to PostgreSQL from local
 
