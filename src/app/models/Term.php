@@ -14,6 +14,13 @@ use Yii;
  * @property string|null $description
  * @property int|null $type
  * @property int|null $parent_term_id
+ *
+ * @property Project $project
+ * @property Term $parentTerm
+ * @property Term[] $childTerms
+ *
+ * @property string $projectName
+ * @property string $parentTermVocabulary
  */
 class Term extends \yii\db\ActiveRecord
 {
@@ -36,6 +43,8 @@ class Term extends \yii\db\ActiveRecord
             [['description'], 'string'],
             [['language'], 'string', 'max' => 2],
             [['vocabulary'], 'string', 'max' => 255],
+            [['project_id'], 'exist', 'skipOnError' => true, 'targetClass' => Project::className(), 'targetAttribute' => ['project_id' => 'id']],
+            [['parent_term_id'], 'exist', 'skipOnError' => true, 'targetClass' => Term::className(), 'targetAttribute' => ['parent_term_id' => 'id']],
         ];
     }
 
@@ -53,5 +62,58 @@ class Term extends \yii\db\ActiveRecord
             'type' => 'Type',
             'parent_term_id' => 'Parent Term ID',
         ];
+    }
+
+    /**
+     * Gets query for [[Project]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getProject()
+    {
+        return $this->hasOne(Project::className(), ['id' => 'project_id']);
+    }
+
+    /**
+     * Gets query for [[ParentTerm]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getParentTerm()
+    {
+        return $this->hasOne(Term::className(), ['id' => 'parent_term_id']);
+    }
+
+    /**
+     * Gets query for [[Terms]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getChildTerms()
+    {
+        return $this->hasMany(Term::className(), ['parent_term_id' => 'id']);
+    }
+
+    /**
+     * Get project name of this term.
+     * @return string
+     */
+    public function getProjectName()
+    {
+        return $this->project->name;
+    }
+
+    /**
+     * Get japanese word of this translated term.
+     * @return string
+     */
+    public function getParentTermVocabulary()
+    {
+        // if ($this->parent_term_id) {
+        //     return $this->parentTerm->vocabulary;
+        // } else {
+        //     return NULL;
+        // }
+        return $this->parent_term_id ? $this->parentTerm->vocabulary : NULL;
     }
 }
