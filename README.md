@@ -46,8 +46,9 @@ Học viên sẽ được thực hành các kiến thức về
 | 3 | [Requirement definition](docs/03.RequirementDefinition/README.md) | [Requirement definition](docs/03.RequirementDefinition/process.rd.md) | [Kiến trúc MVC](docs/03.RequirementDefinition/se.mvc.md) |
 | 3.2 | Working with forms | | [Working with forms](docs/03.RequirementDefinition/se.form.md) |
 | 4 | [Basic design](docs/04.BasicDesign/README.md) | BD::Use cases, business flow |  |
-| 5 | [Thiết kế database](docs/05.DatabaseDesign/README.md) | BD::Database design | DB migration |
-| 6 | Function design | BD::Functional design | Generating code with Gii |
+| 5 | [Thiết kế database](docs/05.DatabaseDesign/README.md) | [BD::Database design](docs/05.DatabaseDesign/process.dbdesign.md) | [DB migration](docs/05.DatabaseDesign/se.dbmigration.md) |
+| 5.2 | Tạo MVC cho table | | [Generating code with Gii](docs/05.1.Gii/se.gii.md) |
+| 6 | Function design | BD::Functional design | |
 | 7 | Non-functional design | BD::Non-functional design | Active Record and validation |
 | 8 | Detail classes | DD:Design classes | AR relation, searching and deleting |
 | 9 | Process sequence | DD::Sequence | Login |
