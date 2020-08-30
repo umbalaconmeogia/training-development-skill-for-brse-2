@@ -189,7 +189,9 @@ function afterDelete()
     }
 }
 ```
-Trong function Project#delete(), nó đã được chỉ định một behavior là gọi function afterDelete().
+Trong function Project#delete(), nó đã được chỉ định một behavior là gọi function afterDelete() [source code](https://github.com/yiisoft/yii2/blob/master/framework/db/BaseActiveRecord.php#L884).
+
+![afterDelete()](material/AR-ProjectDelete.png)
 
 ## Function override
 
