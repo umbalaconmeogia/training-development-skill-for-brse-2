@@ -1,5 +1,6 @@
 <?php
 
+use app\models\Term;
 use yii\helpers\Html;
 use yii\widgets\ActiveForm;
 
@@ -20,7 +21,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
-    <?= $form->field($model, 'type')->textInput() ?>
+    <?= $form->field($model, 'type')->radioList(Term::typeOptionArr()) ?>
 
     <?= $form->field($model, 'parent_term_id')->textInput() ?>
 

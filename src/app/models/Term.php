@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "term".
@@ -21,11 +22,13 @@ use Yii;
  *
  * @property string $projectName
  * @property string $parentTermVocabulary
+ * @property string $typeStr
  */
 class Term extends \yii\db\ActiveRecord
 {
     const TYPE_PROJECT_TERM = 1;
     const TYPE_ADDITIONAL_TERM = 2;
+    const TYPE_OTHER = 3;
 
     /**
      * {@inheritdoc}
@@ -64,6 +67,7 @@ class Term extends \yii\db\ActiveRecord
             'description' => 'Description',
             'type' => 'Type',
             'parent_term_id' => 'Parent Term ID',
+            'typeStr' => 'Type',
         ];
     }
 
@@ -118,5 +122,39 @@ class Term extends \yii\db\ActiveRecord
         //     return NULL;
         // }
         return $this->parent_term_id ? $this->parentTerm->vocabulary : NULL;
+    }
+
+    /**
+     * @return string[]
+     */
+    public static function typeOptionArr()
+    {
+        // [1 => '案件の用語', 2 => '追加用語']
+        return [
+            self::TYPE_PROJECT_TERM => '案件の用語',
+            self::TYPE_ADDITIONAL_TERM => '追加用語',
+            self::TYPE_OTHER => 'その他',
+        ];
+    }
+
+    /**
+     * Property $typeStr
+     * @return string
+     */
+    public function getTypeStr()
+    {
+        // return self::typeOptionArr()[$this->type];
+        return ArrayHelper::getValue(self::typeOptionArr(), $this->type);
+    }
+
+    /**
+     * Delete all child terms before delete this one.
+     */
+    function beforeDelete()
+    {
+        foreach ($this->childTerms as $term) {
+            $term->delete();
+        }
+        return parent::beforeDelete();
     }
 }

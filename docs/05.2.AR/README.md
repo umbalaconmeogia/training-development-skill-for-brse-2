@@ -12,8 +12,8 @@ Trong bài này, chúng ta sẽ tìm hiểu sâu hơn về ActiveRecord và các
 * Search model class.
 * Tip
   * DRY
-  * Behavior.
-  * Function override.
+  * Function override
+  * 2 cách xóa term
 
 ## ActiveRecord
 
@@ -121,38 +121,41 @@ public function actionIndex()
 Các tham số tìm kiếm Project, nếu được chỉ định trong params, thì sẽ được đưa vào điều kiện tìm kiếm.
 Nếu không được chỉ định, thì sẽ không được đưa vào điều kiện tìm kiếm.
 ```php
-/**
- * $param array $params array sẽ có một key là ProjectSearch, chứa các điều kiện filter.
- */
-public function search($params)
+class ProjectSearch extends Project
 {
-    // Load các điều kiện filter được chỉ định trong $params['ProjectSearch']
-    // Lệnh này sẽ load $params['ProjectSearch']['id'] vào $this->id
-    // Lệnh này sẽ load $params['ProjectSearch']['name'] vào $this->name
-    // Lệnh này sẽ load $params['ProjectSearch']['remarks'] vào $this->remarks
-    $this->load($params);
+    /**
+     * $param array $params array sẽ có một key là ProjectSearch, chứa các điều kiện filter.
+     */
+    public function search($params)
+    {
+        // Load các điều kiện filter được chỉ định trong $params['ProjectSearch']
+        // Lệnh này sẽ load $params['ProjectSearch']['id'] vào $this->id
+        // Lệnh này sẽ load $params['ProjectSearch']['name'] vào $this->name
+        // Lệnh này sẽ load $params['ProjectSearch']['remarks'] vào $this->remarks
+        $this->load($params);
 
-    $query = Project::find(); // Tạo ra một ActiveQuery
+        $query = Project::find(); // Tạo ra một ActiveQuery
 
-    // Nếu id được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE id = :id
-    $query->andFilterWhere([
-        'id' => $this->id,
-    ]);
+        // Nếu id được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE id = :id
+        $query->andFilterWhere([
+            'id' => $this->id,
+        ]);
 
-    // Nếu name được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE name ilike %NAME%
-    // ở đây NAME hiểu là data được chỉ định trong filter.
-    $query->andFilterWhere(['ilike', 'name', $this->name]);
-    // Nếu remakrs được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE remarks ilike %REMAKRS%
-    // ở đây REMARKS hiểu là data được chỉ định trong filter.
-    $query->andFilterWhere(['ilike', 'remarks', $this->remarks]);
+        // Nếu name được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE name ilike %NAME%
+        // ở đây NAME hiểu là data được chỉ định trong filter.
+        $query->andFilterWhere(['ilike', 'name', $this->name]);
+        // Nếu remakrs được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE remarks ilike %REMAKRS%
+        // ở đây REMARKS hiểu là data được chỉ định trong filter.
+        $query->andFilterWhere(['ilike', 'remarks', $this->remarks]);
 
-    // Tạo ra một DataProvider sẽ tìm kiếm data theo query được chỉ định
-    // DataProvider sẽ gọi câu lệnh query này để lấy về các Project objects theo điều kiện tìm kiếm.
-    $dataProvider = new ActiveDataProvider([
-        'query' => $query,
-    ]);
+        // Tạo ra một DataProvider sẽ tìm kiếm data theo query được chỉ định
+        // DataProvider sẽ gọi câu lệnh query này để lấy về các Project objects theo điều kiện tìm kiếm.
+        $dataProvider = new ActiveDataProvider([
+            'query' => $query,
+        ]);
 
-    return $dataProvider;
+        return $dataProvider;
+    }
 }
 ```
 Ở trên đã sắp xếp lại thứ tự các câu lệnh trong function *search()* cho dễ hiểu hơn, tác dụng của nó vẫn không thay đổi so với code thật.
@@ -174,38 +177,72 @@ term#type có 2 trạng thái
 * edit/view: chúng ta tạo property Term#typeStr (thông qua function Term#getTypeStr()).
 * create/update và filter trong index: chúng ta tạo function Term::typeOptionArr().
 
-## Behavior
-
-[Behavior](https://www.yiiframework.com/doc/guide/2.0/en/concept-behaviors) là cách định nghĩa sẵn flow xử lý trong class, để các child class có thể *đính* thêm code xử lý vào mà không cần phải sửa lại code gốc.
-
-Cụ thể ở đây, sau khi xóa project, chúng ta muốn xóa các term thuộc về project đó.
-
-Ta thực hiện việc đó bằng cách định nghĩa function *Project#afterDelete()*
-```php
-function afterDelete()
-{
-    foreach ($this->terms as $term) {
-        $term->delete();
-    }
-}
-```
-Trong function Project#delete(), nó đã được chỉ định một behavior là gọi function afterDelete() [source code](https://github.com/yiisoft/yii2/blob/master/framework/db/BaseActiveRecord.php#L884).
-
-![afterDelete()](material/AR-ProjectDelete.png)
-
 ## Function override
 
 (Cái này chỉ để demo một khái niệm của OOP)
+
 Khi xóa một project, chúng ta sẽ muốn xóa luôn toàn bộ các term của project đó.
+
+Trước khi xóa project (bằng cách gọi Project#delete()), chúng ta gọi lệnh delete trên các Term thuộc về project đó.
+
+Ta thực hiện việc đó bằng cách định nghĩa function *Project#beforeDelete()*
+```php
+class Project
+{
+    /**
+     * Delete all child terms before delete this one.
+     */
+    function beforeDelete()
+    {
+        // Delete all term (that does not have parent term)
+        foreach ($this->terms as $term) {
+            if (!$term->parent_term_id) {
+                $term->delete();
+            }
+        }
+        return parent::beforeDelete();
+    }
+}
+```
+Trong function Project#delete(), nó có gọi function beforeDelete() [source code](https://github.com/yiisoft/yii2/blob/master/framework/db/BaseActiveRecord.php#L884).
+
+![beforeDelete()](material/AR-ProjectDelete.png)
+
+Chú ý là trong lệnh Project#beforeDelete(), chúng ta chỉ gọi lệnh Term#delete() trên các term không có parent_term_id
+(là các term tiếng Nhật).
+Còn trong Term#beforeDelete(), chúng ta gọi lệnh xóa toàn bộ các child Term trước khi xóa một Term tiếng Nhật.
+```php
+class Term
+{
+    /**
+     * Delete all child terms before delete this one.
+     */
+    function beforeDelete()
+    {
+        foreach ($this->childTerms as $term) {
+            $term->delete();
+        }
+        return parent::beforeDelete();
+    }
+
+}
+```
+
+## 2 cách xóa term
+
 Ngoài cách sử dụng behavior ở trên, chúng ta có thể override luôn function delete() của Project. Thậm chí có nhiều cách để làm việc này.
 * Cách 1
     ```php
-    function delete()
+    class Project
     {
-        parent::delete();
-
-        foreach ($this->terms as $term) {
-            $term->delete();
+        function delete()
+        {
+            foreach ($this->terms as $term) {
+                if (!$term->parent_term_id) {
+                    $term->delete();
+                }
+            }
+            parent::delete();
         }
     }
     ```
@@ -213,17 +250,27 @@ Ngoài cách sử dụng behavior ở trên, chúng ta có thể override luôn 
     ```php
     function delete()
     {
-        parent::delete();
-
         Term::deleteAll(['project_id' => $this->id]);
+        parent::delete();
     }
     ```
 
-Cách 1 ở trên tạo ra nhiều câu lệnh SQL *DELETE term*.
+Cách 1 ở trên tạo ra nhiều câu lệnh SQL *DELETE term* (tùy thuộc vào số lượng term của project). Ví dụ
+```sql
+DELETE FROM "term" WHERE "id"=4
+DELETE FROM "term" WHERE "id"=2
+DELETE FROM "term" WHERE "id"=3
+DELETE FROM "term" WHERE "id"=1
+DELETE FROM "project" WHERE "id"=1
+```
 
 Cách 2 ở trên tạo ra duy nhất 1 câu lệnh SQL *DELETE term*.
+```sql
+DELETE FROM "term" WHERE "project_id"=5
+DELETE FROM "project" WHERE "id"=5
+```
 
 Không thể nói là cách nào tốt hơn cách nào.
 
 Cách 2 nhanh hơn về mặt hiệu suất. Nhưng cách 1 cho phép gọi thêm nhiều xử lý liên quan đến delete một object Term (cũng như khi ta delete một Project, ta muốn xóa toàn bộ các Term của project đó chẳng hạn).
-Trên quan điểm OOP thì ta muốn sử dụng cách 1 (logic thống nhất, ít xảy ra lỗi do bị sót logic cách 2...). Tuy nhiên đôi khi với những xử lý quan trọng về mặt hiệu suất, ta có thể phải xem xét sử dụng cách 2.
+Trên quan điểm OOP thì ta muốn sử dụng cách 1 (logic thống nhất, ít xảy ra lỗi do bị sót logic như cách 2...). Tuy nhiên đôi khi với những xử lý quan trọng về mặt hiệu suất, ta có thể phải xem xét sử dụng cách 2.

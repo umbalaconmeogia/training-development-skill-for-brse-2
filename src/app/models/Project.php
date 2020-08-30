@@ -77,4 +77,34 @@ class Project extends \yii\db\ActiveRecord
     {
         return $this->hasMany(Term::className(), ['project_id' => 'id']);
     }
+
+    /**
+     * Delete all child terms before delete this one.
+     */
+    // function beforeDelete()
+    // {
+    //     // Delete all term (that does not have parent term)
+    //     foreach ($this->terms as $term) {
+    //         if (!$term->parent_term_id) {
+    //             $term->delete();
+    //         }
+    //     }
+    //     return parent::beforeDelete();
+    // }
+
+    function delete()
+    {
+        foreach ($this->terms as $term) {
+            if (!$term->parent_term_id) {
+                $term->delete();
+            }
+        }
+        parent::delete();
+    }
+
+    // function delete()
+    // {
+    //     Term::deleteAll(['project_id' => $this->id]);
+    //     parent::delete();
+    // }
 }

@@ -33,7 +33,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'language',
             'vocabulary',
             'description:ntext',
-            'type',
+            'typeStr',
             'parentTermVocabulary',
         ],
     ]) ?>
