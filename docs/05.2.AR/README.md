@@ -178,7 +178,50 @@ term#type có 2 trạng thái
 
 [Behavior](https://www.yiiframework.com/doc/guide/2.0/en/concept-behaviors) là cách định nghĩa sẵn flow xử lý trong class, để các child class có thể *đính* thêm code xử lý vào mà không cần phải sửa lại code gốc.
 
+Cụ thể ở đây, sau khi xóa project, chúng ta muốn xóa các term thuộc về project đó.
+
+Ta thực hiện việc đó bằng cách định nghĩa function *Project#afterDelete()*
+```php
+function afterDelete()
+{
+    foreach ($this->terms as $term) {
+        $term->delete();
+    }
+}
+```
+Trong function Project#delete(), nó đã được chỉ định một behavior là gọi function afterDelete().
 
 ## Function override
 
+(Cái này chỉ để demo một khái niệm của OOP)
 Khi xóa một project, chúng ta sẽ muốn xóa luôn toàn bộ các term của project đó.
+Ngoài cách sử dụng behavior ở trên, chúng ta có thể override luôn function delete() của Project. Thậm chí có nhiều cách để làm việc này.
+* Cách 1
+    ```php
+    function delete()
+    {
+        parent::delete();
+
+        foreach ($this->terms as $term) {
+            $term->delete();
+        }
+    }
+    ```
+* Cách 2
+    ```php
+    function delete()
+    {
+        parent::delete();
+
+        Term::deleteAll(['project_id' => $this->id]);
+    }
+    ```
+
+Cách 1 ở trên tạo ra nhiều câu lệnh SQL *DELETE term*.
+
+Cách 2 ở trên tạo ra duy nhất 1 câu lệnh SQL *DELETE term*.
+
+Không thể nói là cách nào tốt hơn cách nào.
+
+Cách 2 nhanh hơn về mặt hiệu suất. Nhưng cách 1 cho phép gọi thêm nhiều xử lý liên quan đến delete một object Term (cũng như khi ta delete một Project, ta muốn xóa toàn bộ các Term của project đó chẳng hạn).
+Trên quan điểm OOP thì ta muốn sử dụng cách 1 (logic thống nhất, ít xảy ra lỗi do bị sót logic cách 2...). Tuy nhiên đôi khi với những xử lý quan trọng về mặt hiệu suất, ta có thể phải xem xét sử dụng cách 2.
