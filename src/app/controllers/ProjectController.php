@@ -124,4 +124,32 @@ class ProjectController extends Controller
 
         throw new NotFoundHttpException('The requested page does not exist.');
     }
+
+    public function actionQueryAll()
+    {
+        $sql = 'SELECT * FROM project;';
+        $result = Yii::$app->db->createCommand($sql)->queryAll();
+        foreach ($result as $projectArr) {
+            echo 'Project name: ' . $projectArr['name'] . ', remarks: ' . $projectArr['remarks'] . '<br />';
+        };
+        die;
+    }
+
+    public function actionFindAll()
+    {
+        $projects = Project::find()->all();
+        foreach ($projects as $project) {
+            echo "Project name: {$project->name}, remarks: {$project->remarks}<br />";
+        }
+        die;
+    }
+
+    public function actionTerms($id)
+    {
+        $project = Project::findOne($id);
+        foreach ($project->terms as $term) {
+            echo "Language: {$term->language}, vocabulary: {$term->vocabulary}, description: {$term->description}, type: {$term->type}<br />";
+        }
+        die;
+    }
 }

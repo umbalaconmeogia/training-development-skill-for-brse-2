@@ -1,5 +1,6 @@
 # Generating code with Gii
 
+![Gii panel](material/gii.png)
 ## Mục đích của bài hôm nay
 
 Bài hôm nay không có nội dung về process, mà tập trung vào việc tạo model, controller, view với database đã được thiết kế.

@@ -71,9 +71,14 @@ Chưa sờ đến model ProjectSearch ở đây. Nó rất thú vị và có qu�
 ## Tạo thêm các CRUD khác
 
 Crud cho Term, cần phải chỉnh lại view index, view cho nó.
+* Bỏ hiển thị ID (vì không có ý nghĩa với người dùng).
+* Thay thế việc hiện thị các field id bằng các thông tin có ý nghĩa hơn.
+  * Hiển thị projectName thay vì project_id.
+  * Hiển thị vocabulary (text) của parent term thay vì parent_term_id.
 
 ## Giải  thích về relation
 
 * Trong list của term, hiển thị thông tin về project của nó.
+  * function getProject()
 * Giải thích về property (có thể là attribute, cũng có thể là relation).
 * Giải thích về getter và setter.

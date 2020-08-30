@@ -13,6 +13,7 @@ use Yii;
  *
  * @property ProjectBusiness[] $projectBusinesses
  * @property ProjectUser[] $projectUsers
+ * @property Term[] $terms
  */
 class Project extends \yii\db\ActiveRecord
 {
@@ -65,5 +66,15 @@ class Project extends \yii\db\ActiveRecord
     public function getProjectUsers()
     {
         return $this->hasMany(ProjectUser::className(), ['project_id' => 'id']);
+    }
+
+    /**
+     * Gets query for [[Term]].
+     *
+     * @return \yii\db\ActiveQuery
+     */
+    public function getTerms()
+    {
+        return $this->hasMany(Term::class, ['project_id' => 'id']);
     }
 }
