@@ -88,3 +88,75 @@ Language: vi, vocabulary: Thanh toán, description: Trả tiền, type: 1
 Language: ja, vocabulary: クレジットカード, description: 支払方法の一つ, type: 1
 Language: vi, vocabulary: Credit card, description: Một hình thức thanh toán, type: 1
 ```
+
+## Search model class
+
+Ở màn hình project/index (http://localhost:18010/index.php?r=project%2Findex), chúng ta làm được rất nhiều việc:
+* Hiển thị danh sách các project
+* Filter
+* Thêm các action button để view/edit/delete.
+
+Data được hiển thị trong table (GridView). GridView sử dụng DataProvider để cung cấp data cho từng row.
+DataProvider cũng không phải là cái gì đặc biệt, nó chỉ là một interface dùng để truy xuất từng phần tử data trong một tập hợp data. Cụ thể ở đây là truy xuất từng ActiveRecord trong một array of AcrtiveRecord.
+
+Tại sao lại dùng cái gì mà DataProvider interface, mà không loop một vòng for cho nó đơn giản :D
+Như đã từng giải thích trước đây, khi việc lập trình được nâng lên một tầng trừu tượng hóa, thì nó có thể đối ứng được với các hình thức data đa dạng hơn.
+Dùng DataProvider để cung cấp data cho GridView, sẽ cho phép GridView có thể làm việc với array of AR (object), cũng có thể làm việc với array of array, hoặc bất kỳ dạng data nào khác. Khi có cơ hội chúng ta sẽ để cập sâu hơn tới vấn đề này.
+
+Trong trường hợp này, cụ thể là chúng ta dùng ActiveDataProvider. DataProvider hiểu đơn giản chỉ là một PHP object, chứa một tập hợp các Project objects (ActiveRecord) mà chúng ta cần để cung cấp cho GridView hiển thị lên màn hình.
+
+Tập hợp các Project objects này được cung cấp qua hàm search() của search model class *ProjectSearch*
+```php
+public function actionIndex()
+{
+    $searchModel = new ProjectSearch();
+    $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+    // Other stuff.
+}
+```
+
+*ProjectSearch* không phải là một class đặc biệt gì cả. Chúng ta tạo ra một class tên là *ProjectSearch* để nhấn mạnh nó chứa các đoạn code tìm kiếm liên quan đến table *project*. Điều quan trọng ở đây là function *search()* của class này, nó trả về một DataProvider tìm kiếm các Project theo điều kiện được chỉ định.
+Điều kiện tìm kiếm này được truyền tới thông qua *Yii::$app->request->queryParams* trong câu lệnh trên.
+
+### Giải thích sâu về code của hàm search()
+Các tham số tìm kiếm Project, nếu được chỉ định trong params, thì sẽ được đưa vào điều kiện tìm kiếm.
+Nếu không được chỉ định, thì sẽ không được đưa vào điều kiện tìm kiếm.
+```php
+/**
+ * $param array $params array sẽ có một key là ProjectSearch, chứa các điều kiện filter.
+ */
+public function search($params)
+{
+    // Load các điều kiện filter được chỉ định trong $params['ProjectSearch']
+    // Lệnh này sẽ load $params['ProjectSearch']['id'] vào $this->id
+    // Lệnh này sẽ load $params['ProjectSearch']['name'] vào $this->name
+    // Lệnh này sẽ load $params['ProjectSearch']['remarks'] vào $this->remarks
+    $this->load($params);
+
+    $query = Project::find(); // Tạo ra một ActiveQuery
+
+    // Nếu id được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE id = :id
+    $query->andFilterWhere([
+        'id' => $this->id,
+    ]);
+
+    // Nếu name được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE name ilike %NAME%
+    // ở đây NAME hiểu là data được chỉ định trong filter.
+    $query->andFilterWhere(['ilike', 'name', $this->name]);
+    // Nếu remakrs được chỉ định trong $params, thì câu lệnh SQL sẽ có điều kiện WHERE remarks ilike %REMAKRS%
+    // ở đây REMARKS hiểu là data được chỉ định trong filter.
+    $query->andFilterWhere(['ilike', 'remarks', $this->remarks]);
+
+    // Tạo ra một DataProvider sẽ tìm kiếm data theo query được chỉ định
+    // DataProvider sẽ gọi câu lệnh query này để lấy về các Project objects theo điều kiện tìm kiếm.
+    $dataProvider = new ActiveDataProvider([
+        'query' => $query,
+    ]);
+
+    return $dataProvider;
+}
+```
+Ở trên đã sắp xếp lại thứ tự các câu lệnh trong function *search()* cho dễ hiểu hơn, tác dụng của nó vẫn không thay đổi so với code thật.
+
+DEMO việc tìm kiếm bằng SQL log.
+
