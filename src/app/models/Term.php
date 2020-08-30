@@ -24,6 +24,9 @@ use Yii;
  */
 class Term extends \yii\db\ActiveRecord
 {
+    const TYPE_PROJECT_TERM = 1;
+    const TYPE_ADDITIONAL_TERM = 2;
+
     /**
      * {@inheritdoc}
      */

@@ -12,9 +12,8 @@ Trong bài này, chúng ta sẽ tìm hiểu sâu hơn về ActiveRecord và các
 * Search model class.
 * Tip
   * DRY
-  * Option array.
   * Behavior.
-  * Lập trình hướng đối tượng.
+  * Function override.
 
 ## ActiveRecord
 
@@ -160,3 +159,26 @@ public function search($params)
 
 DEMO việc tìm kiếm bằng SQL log.
 
+## DRY
+
+DRY là DON'T REPEAT YOURSELF.
+Nhựng đoạn code cùng xử lý một việc giống nhau, thì chúng ta phải cho nó vào trong class/function để tái sử dụng, đừng
+
+Chúng ta sẽ demo khái niệm DRY thông qua quá trình hiển thị/edit thông tin Term#type
+
+term#type có 2 trạng thái
+1: Term chính thức của dự án (từ vựng của dự án, thống nhất với khách hàng).
+2: Term do BrSE, comtor thêm vào để bổ sung thêm cho anh em VN trong dự án hiểu rõ hơn.
+
+Để hiển thị Term#type trên màn hình
+* edit/view: chúng ta tạo property Term#typeStr (thông qua function Term#getTypeStr()).
+* create/update và filter trong index: chúng ta tạo function Term::typeOptionArr().
+
+## Behavior
+
+[Behavior](https://www.yiiframework.com/doc/guide/2.0/en/concept-behaviors) là cách định nghĩa sẵn flow xử lý trong class, để các child class có thể *đính* thêm code xử lý vào mà không cần phải sửa lại code gốc.
+
+
+## Function override
+
+Khi xóa một project, chúng ta sẽ muốn xóa luôn toàn bộ các term của project đó.
