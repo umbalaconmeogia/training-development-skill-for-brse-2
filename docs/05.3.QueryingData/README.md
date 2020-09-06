@@ -48,18 +48,17 @@ Thử với các lệnh
 * where()
 * orderBy()
 
-## Đằng sau relation function
-
 Xem log SQL.
 
-## Relation via junctional table.
-
-## Lazy loading and eager loading.
 
 ## Reference
 
 [Active Record](https://www.yiiframework.com/doc/guide/2.0/en/db-active-record)
 
+
 ## Bai sau
 * Getter/setter: yii magic.
+* Đằng sau relation function
+* Relation via junctional table.
+* Lazy loading and eager loading.
 

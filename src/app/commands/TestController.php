@@ -71,7 +71,11 @@ class TestController extends Controller
                     'parent' => '貸出',
                 ],
             ],
-
+        ],
+        [
+            'name' => 'Project 3',
+            'remarks' => 'Remarks of project 3',
+            'terms' => [],
         ],
     ];
 
@@ -89,13 +93,13 @@ class TestController extends Controller
         echo "DONE\n";
     }
 
+    /**
+     * @pram array $projectArr
+     */
     private function registerProjectAndTerms($projectArr)
     {
         // Find and register project.
-        $project = self::findOneCreateNew(Project::class, [
-            'name' => $projectArr['name'],
-            'remarks' => $projectArr['remarks'],
-        ], TRUE);
+        $project = $this->registerProject($projectArr);
 
         // Find and register project's terms.
         foreach ($projectArr['terms'] as $termArr) {
@@ -103,15 +107,27 @@ class TestController extends Controller
         }
     }
 
+    private function registerProject($projectArr)
+    {
+        $project = self::findOneCreateNew(Project::class, [
+            'name' => $projectArr['name'],
+            'remarks' => $projectArr['remarks'],
+        ], TRUE);
+        return $project;
+    }
+
     private function registerTerm($termArr, $project)
     {
+        // Find a term or create new if not exist.
         $term = self::findOneCreateNew(Term::class, [
             'project_id' => $project->id,
             'language' => $termArr['language'],
             'vocabulary' => $termArr['vocabulary'],
             'description' => $termArr['description'],
         ], FALSE);
+        // Set type.
         $term->type = $termArr['type'];
+        // Set parent_term_id.
         if (isset($termArr['parent'])) {
             $parent = self::findOneCreateNew(Term::class, [
                 'project_id' => $project->id,
