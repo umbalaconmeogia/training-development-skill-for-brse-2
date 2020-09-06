@@ -56,6 +56,10 @@ Xem log SQL.
 
 ## Lazy loading and eager loading.
 
+## Reference
+
+[Active Record](https://www.yiiframework.com/doc/guide/2.0/en/db-active-record)
+
 ## Bai sau
 * Getter/setter: yii magic.
 
