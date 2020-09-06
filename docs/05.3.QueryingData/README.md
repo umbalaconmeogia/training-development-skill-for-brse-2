@@ -3,7 +3,6 @@
 Buổi hôm nay cũng thiên về nội dung kỹ thuật.
 * Command line.
 * Querying data.
-* Getter/setter: yii magic.
 * Đằng sau relation function.
 * Relation via junctional table.
 * Lazy loading and eager loading.
@@ -30,4 +29,33 @@ Command line thường dùng để:
 Việc tạo một command line cũng giống như viết một web Controller.
 
 Chúng ta sẽ tạo một command line Controller làm nhiệm vụ tạo data test.
+Chạy lệnh bằng cú pháp sau
+```shell
+php yii test/generate-project-and-term
+```
+
+Một số điểm lưu ý trong code:
+* Command line controller cũng tương tự như web controller (khác đầu vào là command line thay vì web).
+* Cách tách function `registerTerm()` ra ngoài `registerProjectAndTerms()`.
+* Có lệnh này rồi ta có thể thoải mái nghịch phá data và có thể khôi phục lại dễ dàng.
+
+## Querying data
+
+Thử với các lệnh
+* findOne()
+* findAll()
+* find(), one(), all(),
+* where()
+* orderBy()
+
+## Đằng sau relation function
+
+Xem log SQL.
+
+## Relation via junctional table.
+
+## Lazy loading and eager loading.
+
+## Bai sau
+* Getter/setter: yii magic.
 

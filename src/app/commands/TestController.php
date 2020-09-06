@@ -100,10 +100,6 @@ class TestController extends Controller
         // Find and register project's terms.
         foreach ($projectArr['terms'] as $termArr) {
             $this->registerTerm($termArr, $project);
-            // $term = self::findOneCreateNew(Term::class, [
-            //     'project_id' => $project->id,
-            //     'language' => $termArr
-            // ], FALSE);
         }
     }
 
