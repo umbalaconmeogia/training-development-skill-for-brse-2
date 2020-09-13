@@ -47,5 +47,5 @@ Một trong những ứng dụng quan trọng nhất của việc kết hợp n�
 ![Login](https://techbriefers.com/wp-content/uploads/2019/10/cookie-and-session-management-process-in-codeigniter.jpg)
 
 Thông tin linh tinh:
-* PHP sử dụng key PHPSSID để lưu session ID trong cookies.
-* Ngày xưa, các điện thoại feature phone của docomo không support cookies. Người ta phải dùng mánh là truyền tham số PHPSSID (hoặc với ngôn ngữ/framework khác thì là key khác) vào URL GET parameter.
+* PHP sử dụng key PHPSESSID để lưu session ID trong cookies.
+* Ngày xưa, các điện thoại feature phone của docomo không support cookies. Người ta phải dùng mánh là truyền tham số PHPSESSID (hoặc với ngôn ngữ/framework khác thì là key khác) vào URL GET parameter.
