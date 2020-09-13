@@ -1,4 +1,4 @@
-# Login
+# Session và Cookies
 
 Nội dung của bài hôm nay
 * Học về cookies và session
