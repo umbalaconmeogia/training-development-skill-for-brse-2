@@ -50,7 +50,7 @@ Học viên sẽ được thực hành các kiến thức về
 | 5.1 | Tạo MVC cho table | | [Generating code with Gii](docs/05.1.Gii/se.gii.md) |
 | 5.2 | ActiveRecord | | [Relation, searching](docs/05.2.AR/README.md) |
 | 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) |
-| 6 | | [Session and Cookies](docs/06.SessionCookies/README.md) | |
+| 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | |
 | 7 | Function design | BD::Functional design | |
 | 8 | Non-functional design | BD::Non-functional design | Active Record and validation |
 | 9 | Detail classes | DD:Design classes | AR relation, searching and deleting |
