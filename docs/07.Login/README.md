@@ -1,51 +1,62 @@
 # Session và Cookies
 
 Nội dung của bài hôm nay
-* Học về cookies và session
 * Tính năng login
+* Authentication trong yii2
+* Oauth2
+* Token
+* Một vài điều cơ bản về security của login
+* Logout
 
-Tài liệu tham khảo: https://www.yiiframework.com/doc/guide/2.0/en/runtime-sessions-cookies
+## Tính năng login
 
-## Session
+Hầu như *hệ thống nào có tính năng edit data trên màn hình web cũng cần đến tính năng login*.
+Vì nếu không có tính năng login thì ai cũng có thể access và edit data.
 
-Lưu thông tin trên server.
+(Ví dụ về hệ thống không có tính năng edit data nên không cần login: Trang web toàn HTML tĩnh, mình tự edit file HTML và upload lên server bằng ftp hay ssh.)
 
-Web browser không thể access vào thông tin session.
+Login dùng để *định danh* (authentication) người đang sử dụng hệ thống là một người đã được hệ thống nhận biết (đã đăng ký trong hệ thống). Người chưa được đăng ký và không có thông tin nhận biết thì không login được vào hệ thống.
 
-Chỉ có chương trình PHP chạy trên server mới access (đọc) được vào session.
+Các phương pháp login rất đa dạng:
+* Sử dụng ID và password.
+* Sử dụng thẻ từ, USB.
+* Sử dụng nhận diện khuôn mặt, vân tay, mạch máu, mống mắt.
+* Sử dụng Open ID, OAuth (cái này đúng hơn là phương pháp kết nối, để login vào hệ thống sử dụng một hệ thống login khác)
+* Sử dụng token (thường dùng cho API)
 
-Demo: đọc và ghi session bằng chương trình trên server sử dụng `Yii::$app->session`.
+Việc thực nghiệm tất cả các phương pháp trên đều nằm trong tầm tay của chúng ta.
+Với login trên hệ thống web cũng đều có thể áp dụng toàn bộ các phương pháp trên.
 
-## Cookies
+Hôm nay chúng ta tập trung vào 2 phương pháp cơ bản nhất là sử dụng ID/password và tính năng login của bên thứ 3.
 
-Lưu thông tin trên browser.
+Bản chất của việc login vào hệ thống web là:
+* Sau khi định danh (authentication) được người dùng, thì lưu thông tin đó vào trong session.
+* Trên browser thì lưu session ID đó vào cookie. Mỗi lần browser gửi request tới server thì gửi cookies đi kèm. Server sẽ kiểm tra xem trong cookies có session id không, session có hợp lệ (đã được tạo ra trên server sau khi login thành công) hay không. Nếu có thì request được xem là hợp lệ với một user nào đó đang login.
 
-Web browser có thể access vào cookies qua javascript.
-
-Chương trình trên server cũng có thể access vào cookies.
-
-Vài nguyên tắc:
-* Không lưu nhiều thông tin trên cookies (giới hạn dung lượng, hoặc do security).
-* Về cơ bản thì các web site khác domain không access được cookies của nhau.
-
-Demo: Đọc và ghi session bằng chương trình trên server.
-* Sử dụng $_COOKIES để đọc (cũng có thể dùng [Yii::$app->request->cookies](https://www.yiiframework.com/doc/guide/2.0/en/runtime-sessions-cookies#reading-cookies))
-* Sử dụng [Yii::$app->response->cookies](https://www.yiiframework.com/doc/guide/2.0/en/runtime-sessions-cookies#sending-cookies) để lưu cookies.
-* Đọc cookies trên browser.
-* Ghi cookies trên browser.
-
-## Sử dụng kết hợp cookies và session
-
-HTTP là stateless protocol. Tức là mỗi lần access vào web server là một access độc lập, không có sự liên kết giữa các lần access.
-
-Để duy trì sự liên kết (chia sẻ data giữa các lần access), chúng ta lưu thông tin đó vào session. Chương trình server sẽ đọc và ghi session này.
-
-Để kết nối giữa các lần access, ta lưu session ID vào trong cookie. Nhờ có session ID lưu trong cookies mà ta liên kết được các lần access với nhau.
-
-Một trong những ứng dụng quan trọng nhất của việc kết hợp này là tính năng login. Chúng ta sẽ nói về login vào bài sau (vì muốn giải thích cơ chế phức tạp của login nên cần nhiều thời gian).
+  Cho nên việc check xem có đang login hay không, ai là người đang login được thực hiện với *từng request*, chứ không phải là có một sự kết nối liên tục nào giữa browser và server để duy trì trạng thái login - mà ở bài trước chúng ta nói đến HTTP là stateless protocol
 
 ![Login](https://techbriefers.com/wp-content/uploads/2019/10/cookie-and-session-management-process-in-codeigniter.jpg)
 
-Thông tin linh tinh:
-* PHP sử dụng key PHPSSID để lưu session ID trong cookies.
-* Ngày xưa, các điện thoại feature phone của docomo không support cookies. Người ta phải dùng mánh là truyền tham số PHPSSID (hoặc với ngôn ngữ/framework khác thì là key khác) vào URL GET parameter.
+Liên quan đến định danh người dùng, chúng ta cần phân biệt 2 khái niệm authentication và authorization.
+* Authentication: Để xác nhận một người là người dùng hệ thống (tức là đang login hay không).
+* Authorization: Để kiểm tra việc một người (đã được authenticated) có quyền thực hiện một tính năng nào đó trên hệ thống hay không (ví dụ là người dùng bình thường, hay trưởng bộ phận, hay admin... thì có các quyền khác nhau trên hệ thống).
+
+## Authentication trong yii2
+
+Tài liệu tham khảo: [yii2 security authentication](https://www.yiiframework.com/doc/guide/2.0/en/security-authentication)
+
+Vài chú ý:
+* Ở đây sử dụng rất nhiều interface (chứ không phải là các class). Điều này định nghĩa ra *bộ khung* chuẩn cho vài loại flow xử lý login. Điều này giúp chúng ta không cần phải suy nghĩ về flow login, mà chỉ cần implement các class thực hiện việc này.
+* Việc tạo ra các class dùng để login (chỉ cần chúng implement IdentityInterface là có thể dùng để login) cho phép developer có thể implement nhiều phương án login khác nhau (ID/pasword, hay login bằng token...).
+
+### Kiến trúc class liên quan
+
+![Login classes](material/Login-Classes.png)
+
+### Login sequence
+
+![Login sequence](material/Login-LoginSequence.png)
+
+### Authentication sequence
+
+## Logout

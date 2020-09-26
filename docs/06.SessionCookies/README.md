@@ -2,7 +2,6 @@
 
 Nội dung của bài hôm nay
 * Học về cookies và session
-* Tính năng login
 
 Tài liệu tham khảo: https://www.yiiframework.com/doc/guide/2.0/en/runtime-sessions-cookies
 
