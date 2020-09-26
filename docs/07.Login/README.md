@@ -2,10 +2,6 @@
 
 Nội dung của bài hôm nay
 * Tính năng login
-* Authentication trong yii2
-* Oauth2
-* Token
-* Một vài điều cơ bản về security của login
 * Logout
 
 ## Tính năng login
@@ -57,6 +53,54 @@ Vài chú ý:
 
 ![Login sequence](material/Login-LoginSequence.png)
 
-### Authentication sequence
+### Check user login
+
+Ở thời điểm hiện nay, chúng ta đang không áp dụng check user login với các tính năng. Ai cũng có thể access vào các tính năng được.
+
+Ta sẽ thêm check user login, làm cho các tính năng chỉ access được khi user login.
+
+Thêm vào trong function ProjectController#behaviors().
+```php
+public function behaviors()
+{
+    return [
+        'access' => [
+            'class' => AccessControl::className(),
+            'rules' => [
+                [
+                    'allow' => true,
+                    'roles' => ['@'],
+                ],
+            ],
+        ],
+        // Other stuffs
+    ];
+}
+```
+Lúc này, nếu user chưa login thì sẽ bị redirect đến trang login.
+Nếu đang login rồi thì sẽ OK.
+Cơ chế check login này được thực hiện bởi Yii (thông qua Yii::$app->user).
+Có thể tham khảo chi tiết trong source code của [yii\web\User#getIsGuest()](https://github.com/yiisoft/yii2/blob/master/framework/web/User.php#L360)
+Tham khảo thêm về [Authrozation](https://www.yiiframework.com/doc/guide/2.0/en/security-authorization)
+
+Để sử dụng được tính năng check login này, những cái ta cần làm là khai báo trong config để Yii biết sử dụng class nào cho việc truy xuất thông tin về user.
+```php
+    'components' => [
+        'user' => [
+            'identityClass' => 'app\models\User',
+            'enableAutoLogin' => true,
+        ],
+        // Other stuffs
+    ],
+```
+Điều quan trọng là class *app\module\User* phải implement interface IdentityInterface, để Yii::$app->user có thể sử dụng nó.
+
+Hiện nay class *app\module\User* đang check user, password với ID/password được hard coding trong class này luôn.
+Ở bài sau ta sẽ lần lượt thay class User với thuật toán xác nhận ID/password phức tạp hơn.
+
+Chú ý mặc dù ID/password được hard coding, theo quan điểm lập trình hệ thống chúng ta hay làm thì không tốt cho vấn đề security.
+Nhưng đây vẫn là một phương pháp có thể dùng được (nhất là khi chúng ta làm một trang web nhanh, nhỏ, thậm chí toán static html nhưng muốn giới hạn người dùng thì đây hoàn toàn là một phương pháp có thể dùng được).
 
 ## Logout
+
+Để logout thì ta gọi đến Yii::$app->user->logout. Nó sẽ clear thông tin về user trong cookies và session. Lần sau access vào thì hệ thống sẽ không nhận diện là đang có user login nữa.

@@ -51,16 +51,17 @@ Học viên sẽ được thực hành các kiến thức về
 | 5.2 | ActiveRecord | | [Relation, searching](docs/05.2.AR/README.md) |
 | 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) |
 | 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | |
-| 7 | Function design | BD::Functional design | |
-| 8 | Non-functional design | BD::Non-functional design | Active Record and validation |
-| 9 | Detail classes | DD:Design classes | AR relation, searching and deleting |
-| 10 | Process sequence | DD::Sequence | Login |
-| 11 | Test | Test case, bug | Logging |
-| 12 | Prepare for customer | User manual | Test server |
-| 13 | UAT | UAT | Bug management |
-| 14 | Prepare release | Release decision | Test report |
-| 15 | Release plan | Release plan, release, confirm | Release steps |
-| 16 | Update function | Contigency plan | Branch, pull request, merge, tag |
+| 7 | Login | | [Login](docs/07.Login/README.md) | |
+| 8 | Function design | BD::Functional design | |
+| 9 | Non-functional design | BD::Non-functional design | |
+| 10 | Detail classes | DD:Design classes | |
+| 11 | Process sequence | DD::Sequence | |
+| 12 | Test | Test case, bug | Logging |
+| 13 | Prepare for customer | User manual | Test server |
+| 14 | UAT | UAT | Bug management |
+| 15 | Prepare release | Release decision | Test report |
+| 16 | Release plan | Release plan, release, confirm | Release steps |
+| 17 | Update function | Contigency plan | Branch, pull request, merge, tag |
 
 ## External coding skill
 
