@@ -35,9 +35,9 @@ AppAsset::register($this);
             'class' => 'navbar-inverse navbar-fixed-top',
         ],
     ]);
-    echo Nav::widget([
-        'options' => ['class' => 'navbar-nav navbar-right'],
-        'items' => [
+    $items = [];
+    if (!Yii::$app->user->isGuest) {
+        $items = array_merge($items, [
             ['label' => 'Project', 'url' => ['/project/index']],
             ['label' => 'Term', 'url' => ['/term/index']],
             ['label' => 'User', 'url' => ['/system-user/index']],
@@ -48,7 +48,10 @@ AppAsset::register($this);
                     ['label' => 'Session', 'url' => ['/session-cookies/index']],
                 ],
             ],
-//            ['label' => 'About', 'url' => ['/site/about']],
+        ]);
+    }
+    $items = array_merge($items, [
+//          ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (
                 ['label' => 'Login', 'url' => ['/site/login']]
@@ -62,7 +65,11 @@ AppAsset::register($this);
                 . Html::endForm()
                 . '</li>'
             )
-        ],
+        ]
+    );
+    echo Nav::widget([
+        'options' => ['class' => 'navbar-nav navbar-right'],
+        'items' => $items,
     ]);
     NavBar::end();
     ?>
