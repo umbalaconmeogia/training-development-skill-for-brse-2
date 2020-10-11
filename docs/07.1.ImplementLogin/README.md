@@ -276,6 +276,10 @@ Cách chính quy là tạo một command line giúp ta thêm user hoặc đổi 
 ```shell
 php yii user/create-user <username> <email> <password>
 ```
+Ví dụ
+```shell
+php yii user/create-user test test@example.com password
+```
 
 *Notice:* Có những cách khác ví dụ như đầu tiên là disable việc yêu cầu login trong SystemUserController, dùng màn hình để tạo ra record SystemUser, rồi lại enable tính năng yêu cầu login.
 Tuy nhiên, cách này chỉ có thể do developer dùng trên môi trường dev, không thể áp dụng trên môi trường stagging cũng như product. Cho nên ngay từ đầu chúng ta phải nghĩ (thiết kế) cho việc vận hành hệ thống, tức là phải nghĩ ra cách dùng command line để đăng ký user ở trên. Đây là cách suy nghĩ đúng đắn và cần thiết khi thiết kế hệ thống (gọi là thiết kế vận hành).
