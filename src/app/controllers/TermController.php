@@ -5,30 +5,13 @@ namespace app\controllers;
 use Yii;
 use app\models\Term;
 use app\models\TermSearch;
-use yii\web\Controller;
 use yii\web\NotFoundHttpException;
-use yii\filters\VerbFilter;
 
 /**
  * TermController implements the CRUD actions for Term model.
  */
-class TermController extends Controller
+class TermController extends BaseUserController
 {
-    /**
-     * {@inheritdoc}
-     */
-    public function behaviors()
-    {
-        return [
-            'verbs' => [
-                'class' => VerbFilter::className(),
-                'actions' => [
-                    'delete' => ['POST'],
-                ],
-            ],
-        ];
-    }
-
     /**
      * Lists all Term models.
      * @return mixed

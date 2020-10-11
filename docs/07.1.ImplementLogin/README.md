@@ -38,6 +38,12 @@ Trong qúa trình implement class *SystemUser*, chúng ta sẽ có cơ hội ôn
 2. Implement interface.
 3. Getter và setter.
 
+Nếu mọi người sử dụng code mới nhất của bài học hôm nay, thì cách thao tác sẽ hơi khác với thứ tự bài giảng. Các thao tác chúng ta cần làm là:
+1. Get code mới nhất về bằng lệnh `git pull`.
+2. Chạy `php yii migrate/up` để đổi tên table `user` thành `system_user`.
+3. Chạy lệnh `php yii user/create-user <username> <email> <password> để tạo ra user đầu tiên trong `system_user`.
+4. Dùng user đó để login vào hệ thống.
+
 ### Đổi tên table *user* thành *system_user*
 
 Tạo file migration
