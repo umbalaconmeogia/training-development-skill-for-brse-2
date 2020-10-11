@@ -40,18 +40,18 @@ Học viên sẽ được thực hành các kiến thức về
 
 | No. | Chủ đề | Dev process | SE skill | Code |
 |---|---|---|---|---|
-| 0 | [Mở đầu](docs/00.Lesson.Introduction/README.md) | | [Prerequisites](docs/00.Prerequisites.se/README.md) |
-| 1 | [Kiếm được dự án](docs/01.WeFoundAProject/README.md) | [Request for proposal](docs/01.WeFoundAProject/process.md) | [Using git](docs/01.WeFoundAProject/se.git.md) |
-| 2 | [Start dự án](docs/02.ProjectPlan/README.md) | [Project plan](docs/02.ProjectPlan/kickoff.md) | [Prepare dev environment](docs/02.ProjectPlan/devEnv.md) |
-| 3 | [Requirement definition](docs/03.RequirementDefinition/README.md) | [Requirement definition](docs/03.RequirementDefinition/process.rd.md) | [Kiến trúc MVC](docs/03.RequirementDefinition/se.mvc.md) |
-| 3.2 | Working with forms | | [Working with forms](docs/03.RequirementDefinition/se.form.md) |
+| 0 | [Mở đầu](docs/00.Lesson.Introduction/README.md) | | [Prerequisites](docs/00.Prerequisites.se/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b00) |
+| 1 | [Kiếm được dự án](docs/01.WeFoundAProject/README.md) | [Request for proposal](docs/01.WeFoundAProject/process.md) | [Using git](docs/01.WeFoundAProject/se.git.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b01) |
+| 2 | [Start dự án](docs/02.ProjectPlan/README.md) | [Project plan](docs/02.ProjectPlan/kickoff.md) | [Prepare dev environment](docs/02.ProjectPlan/devEnv.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b02) |
+| 3 | [Requirement definition](docs/03.RequirementDefinition/README.md) | [Requirement definition](docs/03.RequirementDefinition/process.rd.md) | [Kiến trúc MVC](docs/03.RequirementDefinition/se.mvc.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b03) |
+| 3.2 | Working with forms | | [Working with forms](docs/03.RequirementDefinition/se.form.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b03.2) |
 | 4 | [Basic design](docs/04.BasicDesign/README.md) | BD::Use cases, business flow |  |
-| 5 | [Thiết kế database](docs/05.DatabaseDesign/README.md) | [BD::Database design](docs/05.DatabaseDesign/process.dbdesign.md) | [DB migration](docs/05.DatabaseDesign/se.dbmigration.md) |
-| 5.1 | Tạo MVC cho table | | [Generating code with Gii](docs/05.1.Gii/se.gii.md) |
-| 5.2 | ActiveRecord | | [Relation, searching](docs/05.2.AR/README.md) |
-| 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) |
-| 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | |
-| 7 | Login | | [Login](docs/07.Login/README.md) | |
+| 5 | [Thiết kế database](docs/05.DatabaseDesign/README.md) | [BD::Database design](docs/05.DatabaseDesign/process.dbdesign.md) | [DB migration](docs/05.DatabaseDesign/se.dbmigration.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b05) |
+| 5.1 | Tạo MVC cho table | | [Generating code with Gii](docs/05.1.Gii/se.gii.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b05.1) |
+| 5.2 | ActiveRecord | | [Relation, searching](docs/05.2.AR/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b05.2) |
+| 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b05.3) |
+| 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b06) |
+| 7 | Login | | [Login](docs/07.Login/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07) |
 | 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1) |
 | 8 | Function design | BD::Functional design | |
 | 9 | Non-functional design | BD::Non-functional design | |
