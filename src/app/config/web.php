@@ -22,7 +22,7 @@ $config = [
         ],
         'user' => [ // Yii::$app->user
             'class' => 'yii\web\User',
-            'identityClass' => 'app\models\User',
+            'identityClass' => 'app\models\SystemUser',
             'enableAutoLogin' => true,
         ],
         'errorHandler' => [
