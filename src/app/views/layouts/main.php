@@ -40,8 +40,14 @@ AppAsset::register($this);
         'items' => [
             ['label' => 'Project', 'url' => ['/project/index']],
             ['label' => 'Term', 'url' => ['/term/index']],
-            ['label' => 'Sample', 'url' => ['/sample/index']],
-            ['label' => 'Session', 'url' => ['/session-cookies/index']],
+            ['label' => 'User', 'url' => ['/system-user/index']],
+            [
+                'label' => 'R&D',
+                'items' => [
+                    ['label' => 'Sample', 'url' => ['/sample/index']],
+                    ['label' => 'Session', 'url' => ['/session-cookies/index']],
+                ],
+            ],
 //            ['label' => 'About', 'url' => ['/site/about']],
             ['label' => 'Contact', 'url' => ['/site/contact']],
             Yii::$app->user->isGuest ? (

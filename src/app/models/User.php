@@ -18,8 +18,8 @@ class User extends \yii\base\BaseObject implements \yii\web\IdentityInterface
             'id' => '102',
             'username' => 'qazw',
             'password_hash' => '$2y$13$bdS4jgH2MyAi1pqWLnlgkeg84DKSodUbPXUbuy.moYkqcTS.2xexu', // qazw123
-            'authKey' => 'test100key123',
-            'accessToken' => '100-token123',
+            'authKey' => 'test102key123',
+            'accessToken' => '102-token123',
         ],
         '100' => [
             'id' => '100',
