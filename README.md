@@ -38,8 +38,8 @@ Học viên sẽ được thực hành các kiến thức về
 
 ## Chương trình học
 
-| No. | Chủ đề | Dev process | SE skill |
-|---|---|---|---|
+| No. | Chủ đề | Dev process | SE skill | Code |
+|---|---|---|---|---|
 | 0 | [Mở đầu](docs/00.Lesson.Introduction/README.md) | | [Prerequisites](docs/00.Prerequisites.se/README.md) |
 | 1 | [Kiếm được dự án](docs/01.WeFoundAProject/README.md) | [Request for proposal](docs/01.WeFoundAProject/process.md) | [Using git](docs/01.WeFoundAProject/se.git.md) |
 | 2 | [Start dự án](docs/02.ProjectPlan/README.md) | [Project plan](docs/02.ProjectPlan/kickoff.md) | [Prepare dev environment](docs/02.ProjectPlan/devEnv.md) |
@@ -52,7 +52,7 @@ Học viên sẽ được thực hành các kiến thức về
 | 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) |
 | 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | |
 | 7 | Login | | [Login](docs/07.Login/README.md) | |
-| 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | |
+| 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1) |
 | 8 | Function design | BD::Functional design | |
 | 9 | Non-functional design | BD::Non-functional design | |
 | 10 | Detail classes | DD:Design classes | |

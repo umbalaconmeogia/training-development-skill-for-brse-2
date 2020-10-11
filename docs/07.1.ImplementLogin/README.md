@@ -4,6 +4,8 @@ Bài hôm nay sẽ trình bày cách implement một số cách implement tính 
 * Lưu thông tin login vào DB
 * OAuth2
 
+Code cho bài học này [ở đây](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1)
+
 ## Ôn lại bài cũ
 
 Ở [bài trước](../07.Login/README.md) chúng ta đã thử với tính năng login bằng username và password.
