@@ -52,7 +52,7 @@ Học viên sẽ được thực hành các kiến thức về
 | 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) |
 | 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | |
 | 7 | Login | | [Login](docs/07.Login/README.md) | |
-| 7.1 | Implement login | | [Login](docs/07.1.ImplementLogin/README.md) | |
+| 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | |
 | 8 | Function design | BD::Functional design | |
 | 9 | Non-functional design | BD::Non-functional design | |
 | 10 | Detail classes | DD:Design classes | |
