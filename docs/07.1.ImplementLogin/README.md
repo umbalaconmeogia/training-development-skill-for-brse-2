@@ -95,6 +95,12 @@ Chú ý rằng khái niệm getter và setter là khái niệm chung và phổ b
 Vì ta muốn nhập *password* trên màn hình như cách nhập các thông tin khác, nên ta khai báo để SystemUser có một property tên là *password*.
 Trong trường hợp này, chúng ta sẽ tạo function setPassword(), và khai báo *password* là một *safe* attribute, để nó có thể được massive assigned (cách thường dùng để gán data được nhập từ màn hình thông qua hàm *$model->load(Yii::$app->request->post)* quen thuộc).
 
+<details>
+  <summary>Password setter and getter calling</summary>
+
+  ![password setter/getter](material/03_setPassword.png)
+</details>
+
 Với setPassword($password), ta sẽ convert password sang password_hash để lưu vào DB.
 ```php
     public function setPassword($password)
