@@ -263,11 +263,14 @@ class SystemUserController extends Controller
 }
 ```
 
-Chú ý trước khi thêm giới hạn này, ta cần tạo ít nhất một user trong DB, nếu không sau đó sẽ không thể login vào hệ thống, để thêm bớt user gì nữa.
+Chú ý khi thêm giới hạn yêu cầu login này, ta cần tạo ít nhất một user trong DB, nếu sẽ không thể login vào hệ thống, để thêm bớt user gì nữa.
 Cách chính quy là tạo một command line giúp ta thêm user hoặc đổi password của user. Ta có thể tạo SystemUser từ command line theo lệnh sau
 ```shell
 php yii user/create-user <username> <email> <password>
 ```
+
+*Notice:* Có những cách khác ví dụ như đầu tiên là disable việc yêu cầu login trong SystemUserController, dùng màn hình để tạo ra record SystemUser, rồi lại enable tính năng yêu cầu login.
+Tuy nhiên, cách này chỉ có thể do developer dùng trên môi trường dev, không thể áp dụng trên môi trường stagging cũng như product. Cho nên ngay từ đầu chúng ta phải nghĩ (thiết kế) cho việc vận hành hệ thống, tức là phải nghĩ ra cách dùng command line để đăng ký user ở trên. Đây là cách suy nghĩ đúng đắn và cần thiết khi thiết kế hệ thống (gọi là thiết kế vận hành).
 
 ## OAuth2
 
