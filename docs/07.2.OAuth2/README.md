@@ -70,6 +70,7 @@ Khi hệ thống của chúng ta muốn dùng Google Account để login, thì G
 Để có thể làm việc với Google API, thì chúng ta phải đăng ký hệ thống với Google, để nhận thông tin định danh cho hệ thống, gọi là *client ID* và *client secret*.
 
 Flow chung của việc login với Google account (cũng như các hệ thống dùng OAuth2)
+
 ![Flow](material/OAuth2-Register.png)
 
 ## Đăng ký client ID và client secret
@@ -140,6 +141,7 @@ $config = [
 ## Implement callback
 
 Flow màn hình login
+
 ![Login screen](material/OAuth2-LoginFlow.png)
 
 Router của callback là *site/auth* (theo khai báo khi tạo Google Client ID)
