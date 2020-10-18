@@ -1,7 +1,15 @@
 # Login via OAuth2
 
 Bài hôm may sẽ trình bày việc sử dụng các account của hệ thống khác để login.
-* OAuth2
+* Overview
+* Configuration và security
+* Flow của việc login dùng Google account
+* Đăng ký client ID và client secret
+* Thêm thư viện yii2-authclient
+* Config app
+* Tạo table auth
+* Implement callback
+* Thêm button login with google
 
 ## Overview
 
@@ -136,6 +144,14 @@ $config = [
     ],
 ];
 
+```
+
+## Tạo table auth
+
+Để lưu thông tin liên quan đến login bằng Google, chúng ta cần chạy migration để tạo ra table *auth*
+
+```shell
+php yii migrate
 ```
 
 ## Implement callback
