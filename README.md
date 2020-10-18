@@ -53,6 +53,7 @@ Học viên sẽ được thực hành các kiến thức về
 | 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b06) |
 | 7 | Login | | [Login](docs/07.Login/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07) |
 | 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1) |
+| 7.2 | Login with Google | | [Login with Google](docs/07.2.OAuth2/README.md) | |
 | 8 | Function design | BD::Functional design | |
 | 9 | Non-functional design | BD::Non-functional design | |
 | 10 | Detail classes | DD:Design classes | |

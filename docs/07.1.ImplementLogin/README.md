@@ -2,7 +2,6 @@
 
 Bài hôm nay sẽ trình bày cách implement một số cách implement tính năng login.
 * Lưu thông tin login vào DB
-* OAuth2
 
 Code cho bài học này [ở đây](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1)
 
@@ -283,36 +282,3 @@ php yii user/create-user test test@example.com password
 
 *Notice:* Có những cách khác ví dụ như đầu tiên là disable việc yêu cầu login trong SystemUserController, dùng màn hình để tạo ra record SystemUser, rồi lại enable tính năng yêu cầu login.
 Tuy nhiên, cách này chỉ có thể do developer dùng trên môi trường dev, không thể áp dụng trên môi trường stagging cũng như product. Cho nên ngay từ đầu chúng ta phải nghĩ (thiết kế) cho việc vận hành hệ thống, tức là phải nghĩ ra cách dùng command line để đăng ký user ở trên. Đây là cách suy nghĩ đúng đắn và cần thiết khi thiết kế hệ thống (gọi là thiết kế vận hành).
-
-## OAuth2
-
-Ngoài sử dụng username/password, các hệ thống hiện đại ngày nay có thể yêu cầu cho phép login bằng một hệ thống user ID không do bản thân hệ thống của chúng ta quản lý. Ví dụ như login bằng hệ thống của công ty khách hàng, google ID, facebook ID, twitter ID...
-
-Chúng ta thực hiện việc này thông qua các protocol như OAuth2, Open ID, LDAP...
-
-Ở đây xin giới thiệu cách login thông qua protocol OAuth2 với Google ID.
-
-Về cơ bản thì chúng ta sẽ implement protocol OAuth2 trong chương trình, và config để nó hoạt động với Google OAuth API. Tuy nhiên những việc phổ biến như vậy thì luôn có người đã nghĩ và làm trước khi chúng ta nghĩ tới, nên những gì chúng ta cần làm chỉ là sử dụng lại thư viện của họ vào hệ thống của chúng ta, config các thông tin cần thiết để hệ thống kết nối được với Google API.
-
-### Thêm yii2-authclient
-
-Để cài đặt thư viện *yiisoft/yii2-authclient*
-```shell
-composer require yiisoft/yii2-authclient
-```
-
-Mọi người dùng lại file composer.json của mình thì chỉ chạy lệnh
-```shell
-composer install
-```
-
-Xem giải thích về composer require/update/install [tại đây](https://github.com/umbalaconmeogia/yii2-batsg#explanation-about-composer-require-update-and-install)
-
-### Add callback into SiteController#actions()
-
-```php
-            'auth' => [
-                'class' => 'yii\authclient\AuthAction',
-                'successCallback' => [$this, 'onAuthSuccess'],
-            ],
-```

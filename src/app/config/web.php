@@ -3,6 +3,8 @@
 $params = require __DIR__ . '/params.php';
 $db = require __DIR__ . '/db.php';
 
+$secret = require __DIR__ . '/secret.php';
+
 $config = [
     'id' => 'basic',
     'basePath' => dirname(__DIR__),
@@ -61,6 +63,16 @@ $config = [
             ],
         ],
         */
+        'authClientCollection' => [
+            'class' => 'yii\authclient\Collection',
+            'clients' => [
+                'google' => [
+                    'class' => 'yii\authclient\clients\Google',
+                    'clientId' => $secret['google']['clientId'],
+                    'clientSecret' => $secret['google']['clientSecret'],
+                ],
+            ],
+        ],
     ],
     'params' => $params,
 ];

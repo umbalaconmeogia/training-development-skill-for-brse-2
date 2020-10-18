@@ -3,6 +3,7 @@
 namespace app\models;
 
 use Yii;
+use app\models\SystemUser as User;
 
 /**
  * This is the model class for table "auth".
@@ -14,7 +15,7 @@ use Yii;
  *
  * @property User $user
  */
-class Auth extends BaseAppModel
+class Auth extends \yii\db\ActiveRecord
 {
     /**
      * @inheritdoc
