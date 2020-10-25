@@ -86,8 +86,9 @@ Flow chung của việc login với Google account (cũng như các hệ thống
 Google OAuth client ID phải thuộc về một Project trên Google API.
 Trước khi đăng ký OAuth client ID, ta cần tạo một Project trên Google APIs.
 
-Ta cứ hiểu Project tương đương với một hệ thống của công ty, và t đăng ký hệ thống đó với Google API (với quyền cho phép access vào data trong một scope nào đó), sau đó ta sẽ tạo các *client* cho phép accesss vào hệ thống này dưới các dạng web, iOS app, Android app, API...
+Ta cứ hiểu Project tương đương với một hệ thống của công ty, và ta đăng ký hệ thống đó với Google API (với quyền cho phép access vào data trong một scope nào đó), sau đó ta sẽ tạo các *client* cho phép accesss vào hệ thống này dưới các dạng web, iOS app, Android app, API...
 
+Mở [Google API Console](https://console.developers.google.com/)
 
 * Tạo project
   ![Create Project](material/Google_10_CreateProject.png)
@@ -134,32 +135,30 @@ Xem giải thích về composer require/update/install [tại đây](https://git
 File *secret.php* của chúng ta có dạng như sau (chú ý, thông tin dưới đây chỉ là ví dụ, không thể sử dụng được)
 ```php
 return [
-    'google' => [
-        'clientId' => '565094619880-tfagtb6761aiute1tp6qp5b9qtl0qd9u.apps.googleusercontent.com',
-        'clientSecret' => '_4AKYg8hVyXS_s8gt4Y-gYFg',
+    'authClientCollection' => [
+        'class' => 'yii\authclient\Collection',
+        'clients' => [
+            'google' => [
+                'class' => 'yii\authclient\clients\Google',
+                'clientId' => '727778427125-ingmfnd0kpjshf6f9aamk1rrj94f3bnv.apps.googleusercontent.com',
+                'clientSecret' => 'GMV0r8EiMHMy_3S4OZNATl18',
+            ],
+        ],
     ],
 ];
 ```
 
 File *web.php* sẽ sử dụng thông tin trong secret.php và khai báo component để sử dụng Google account
-```
+```php
 $secret = require __DIR__ . '/secret.php';
 
 $config = [
     'components' => [
-        'authClientCollection' => [
-            'class' => 'yii\authclient\Collection',
-            'clients' => [
-                'google' => [
-                    'class' => 'yii\authclient\clients\Google',
-                    'clientId' => $secret['google']['clientId'],
-                    'clientSecret' => $secret['google']['clientSecret'],
-                ],
-            ],
-        ],
+        'authClientCollection' => $secret['authClientCollection'],
+        // Other stuffs.
     ],
+    // Other stuffs.
 ];
-
 ```
 
 ## Tạo table auth
