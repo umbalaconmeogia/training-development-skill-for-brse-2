@@ -94,6 +94,7 @@ Ta cứ hiểu Project tương đương với một hệ thống của công ty,
   ![Input Project](material/Google_11_InputProject.png)
 
 * Với project mới tạo, ta cần set OAuth consent screen cho nó.
+  Có thể chọn User Type là *External* nếu muốn sử dụng địa chỉ gmail bất kỳ đăng nhập vào hệ thống (không giới hạn là địa chỉ gmail của công ty).
   ![Set OAuth consent](material/Google_13_OAuthConsent.png)
   ![Input OAuth consent](material/Google_14_OAuthConsentInput.png)
 
@@ -124,7 +125,7 @@ Mọi người dùng lại file composer.json sau khi đã được cài đặt 
 ```shell
 composer install
 ```
-thay vì lệnh `composer require* ở trên.
+thay vì lệnh `composer require` ở trên.
 
 Xem giải thích về composer require/update/install [tại đây](https://github.com/umbalaconmeogia/yii2-batsg#explanation-about-composer-require-update-and-install)
 
@@ -179,7 +180,7 @@ Router của callback là *site/auth* (theo khai báo khi tạo Google Client ID
 
 Ta có 2 phương pháp để định nghĩa một action trong controller
 1. Tạo function action, ví dụ `public function actionIndex()`.
-2. Khái báo trong `public function actions()`.
+2. Khai báo trong `public function actions()`.
 
 Trong trường hợp này, ta sẽ sử dụng khai báo trong function *actions()*.
 
@@ -231,3 +232,22 @@ Cuối cùng, thêm button login bằng Google vào màn hình login.
     ]) ?>
 ```
 ![Login screen](material/OAuth2-LoginScreen.png)
+
+## Test
+
+Đến đây thì hệ thống của chúng ta đã sẵn sàng để login vào bằng Google ID.
+
+Hệ thống này không cho phép người dùng bên ngoài đăng ký user, mà chỉ cho phép user đã được đăng ký từ trước vào hệ thống (do admin hoặc từ command line).
+
+Command line để tạo một user có dạng
+```shell
+php yii user/create-user <username> <email> <password>
+```
+
+Ta có thể lược bỏ thông tin password. Khi đó hệ thống sẽ tạo ra một random password (tất nhiên chúng ta không biết password này nên không thể dùng password này để login).
+
+Để đăng ký user login bằng Google ID, ta dùng lệnh tương tự như sau, đăng ký username và email đều là địa chỉ Google email, và lược bỏ thông tin password.
+```shell
+php yii user/create-user example@gmail.com example@gmail.com
+```
+Chú ý, lệnh đăng ký user trên chính là lệnh đăng ký user bình thường trong hệ thống. Không có gì khác biệt giữa một user định login bằng ID/password và user login bằng Google ID. Chỉ là nếu username là Google ID, thì ta có thể login vào hệ thống thông qua Google ID, bên cạnh tính năng login bằng ID/password.
