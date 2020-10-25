@@ -63,16 +63,7 @@ $config = [
             ],
         ],
         */
-        'authClientCollection' => [
-            'class' => 'yii\authclient\Collection',
-            'clients' => [
-                'google' => [
-                    'class' => 'yii\authclient\clients\Google',
-                    'clientId' => $secret['google']['clientId'],
-                    'clientSecret' => $secret['google']['clientSecret'],
-                ],
-            ],
-        ],
+        'authClientCollection' => $secret['authClientCollection'],
     ],
     'params' => $params,
 ];

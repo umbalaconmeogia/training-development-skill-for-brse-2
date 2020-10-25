@@ -25,15 +25,20 @@ class UserController extends Controller
      */
     public function actionCreateUser($username, $email, $password)
     {
-        $user = SystemUser::findByUsername($username);
-        if (!$user) {
-            $user = new SystemUser(['username' => $username]);
-            $user->generateAuthKey();
-        }
-        $user->email = $email;
-        if ($password) {
-            $user->password = $password;
-        }
-        $user->save();
+        Yii::$app->db->transaction(function() use ($username, $email, $password) {
+            $user = SystemUser::findByUsername($username);
+            if (!$user) {
+                $user = new SystemUser(['username' => $username]);
+                $user->generateAuthKey();
+            }
+            $user->email = $email;
+            if ($password) {
+                $user->password = $password;
+            }
+            if (!$user->save()) {
+                echo "Error while create user.\n";
+                print_r($user->getErrors());
+            }
+        });
     }
 }
