@@ -81,9 +81,26 @@ Flow chung của việc login với Google account (cũng như các hệ thống
 
 ![Flow](material/OAuth2-Register.png)
 
+## Tạo Project trên Google API
+
+Google OAuth client ID phải thuộc về một Project trên Google API.
+Trước khi đăng ký OAuth client ID, ta cần tạo một Project trên Google APIs.
+
+Ta cứ hiểu Project tương đương với một hệ thống của công ty, và t đăng ký hệ thống đó với Google API (với quyền cho phép access vào data trong một scope nào đó), sau đó ta sẽ tạo các *client* cho phép accesss vào hệ thống này dưới các dạng web, iOS app, Android app, API...
+
+
+* Tạo project
+  ![Create Project](material/Google_10_CreateProject.png)
+  ![Input Project](material/Google_11_InputProject.png)
+
+* Với project mới tạo, ta cần set OAuth consent screen cho nó.
+  ![Set OAuth consent](material/Google_13_OAuthConsent.png)
+  ![Input OAuth consent](material/Google_14_OAuthConsentInput.png)
+
+
 ## Đăng ký client ID và client secret
 
-Mở trang [Google API Console](https://console.developers.google.com/), đăng ký một OAuth client ID cho hệ thống của mình.
+Trên [Google API Console](https://console.developers.google.com/), chọn *Project Term*, đăng ký một OAuth client ID cho hệ thống của mình.
 ![Create Credential](material/Google_00_CreateCredential.png)
 
 Điền các thông tin cần thiết để tạo OAuth Client ID
