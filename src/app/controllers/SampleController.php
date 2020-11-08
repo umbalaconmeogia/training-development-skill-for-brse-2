@@ -47,4 +47,15 @@ class SampleController extends Controller
         ]);
     }
 
+    public function actionLog()
+    {
+        Yii::debug('This is debug log', __METHOD__);
+        Yii::trace('This is trace log', __METHOD__);
+        Yii::info('This is info log', __METHOD__);
+        Yii::warning('This is warning log', __METHOD__);
+        Yii::error('This is error log', __METHOD__);
+
+        return $this->renderContent("Log is witten to file");
+    }
+
 }

@@ -54,6 +54,23 @@ $config = [
                 ],
             ],
         ],
+        // 'log' => [
+        //     'targets' => [
+        //         [
+        //             'class' => 'yii\log\FileTarget',
+        //             'levels' => ['error', 'warning', 'info', 'trace'],
+        //             'logVars' => [],
+        //             'except' => ['yii\db\*'],
+        //         ],
+        //         [
+        //             'class' => 'yii\log\FileTarget',
+        //             'levels' => ['error', 'warning', 'info', 'trace'],
+        //             'logVars' => [],
+        //             'categories' => ['yii\db\*'],
+        //             'logFile' => '@app/runtime/logs/sql.log',
+        //         ],
+        //     ],
+        // ],
         'db' => $db,
         /*
         'urlManager' => [

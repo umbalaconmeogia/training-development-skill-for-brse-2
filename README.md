@@ -54,16 +54,17 @@ Học viên sẽ được thực hành các kiến thức về
 | 7 | Login | | [Login](docs/07.Login/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07) |
 | 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1) |
 | 7.2 | Login with Google | | [Login with Google](docs/07.2.OAuth2/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.2) |
-| 8 | Function design | BD::Functional design | |
-| 9 | Non-functional design | BD::Non-functional design | |
-| 10 | Detail classes | DD:Design classes | |
-| 11 | Process sequence | DD::Sequence | |
-| 12 | Test | Test case, bug | Logging |
-| 13 | Prepare for customer | User manual | Test server |
-| 14 | UAT | UAT | Bug management |
-| 15 | Prepare release | Release decision | Test report |
-| 16 | Release plan | Release plan, release, confirm | Release steps |
-| 17 | Update function | Contigency plan | Branch, pull request, merge, tag |
+| 8 | Loggin | | [Loggin](docs/08.Logging/README.md) | |
+| 9 | Function design | BD::Functional design | |
+| 10 | Non-functional design | BD::Non-functional design | |
+| 11 | Detail classes | DD:Design classes | |
+| 12 | Process sequence | DD::Sequence | |
+| 13 | Test | Test case, bug | Logging |
+| 14 | Prepare for customer | User manual | Test server |
+| 15 | UAT | UAT | Bug management |
+| 16 | Prepare release | Release decision | Test report |
+| 17 | Release plan | Release plan, release, confirm | Release steps |
+| 18 | Update function | Contigency plan | Branch, pull request, merge, tag |
 
 ## External coding skill
 
