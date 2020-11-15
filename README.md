@@ -38,8 +38,8 @@ Học viên sẽ được thực hành các kiến thức về
 
 ## Chương trình học
 
-| No. | Chủ đề | Dev process | SE skill | Code |
-|---|---|---|---|---|
+| No. | Chủ đề | Dev process | SE skill | Code | Video |
+|---|---|---|---|---|---|
 | 0 | [Mở đầu](docs/00.Lesson.Introduction/README.md) | | [Prerequisites](docs/00.Prerequisites.se/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b00) |
 | 1 | [Kiếm được dự án](docs/01.WeFoundAProject/README.md) | [Request for proposal](docs/01.WeFoundAProject/process.md) | [Using git](docs/01.WeFoundAProject/se.git.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b01) |
 | 2 | [Start dự án](docs/02.ProjectPlan/README.md) | [Project plan](docs/02.ProjectPlan/kickoff.md) | [Prepare dev environment](docs/02.ProjectPlan/devEnv.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b02) |
@@ -51,9 +51,9 @@ Học viên sẽ được thực hành các kiến thức về
 | 5.2 | ActiveRecord | | [Relation, searching](docs/05.2.AR/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b05.2) |
 | 5.3 | ActiveRecord | | [Query performance](docs/05.3.QueryingData/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b05.3) |
 | 6 | Session and Cookies | | [Session and Cookies](docs/06.SessionCookies/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b06) |
-| 7 | Login | | [Login](docs/07.Login/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07) |
-| 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1) |
-| 7.2 | Login with Google | | [Login with Google](docs/07.2.OAuth2/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.2) |
+| 7 | Login | | [Login](docs/07.Login/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07) | [Video](https://www.youtube.com/watch?v=V6m5XSS3e0M) |
+| 7.1 | Implement login | | [Implement Login](docs/07.1.ImplementLogin/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.1) | [Video](https://www.youtube.com/watch?v=oyHtiGEO2gk) |
+| 7.2 | Login with Google | | [Login with Google](docs/07.2.OAuth2/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b07.2) | [Video](https://www.youtube.com/watch?v=tworqlYcbZo) |
 | 8 | Logging | | [Logging](docs/08.Logging/README.md) | [Code](https://github.com/umbalaconmeogia/training-development-skill-for-brse-2/tree/b08) |
 | 9 | Function design | BD::Functional design | |
 | 10 | Non-functional design | BD::Non-functional design | |
