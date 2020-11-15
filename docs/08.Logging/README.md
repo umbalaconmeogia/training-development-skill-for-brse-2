@@ -4,7 +4,7 @@
 
 Tính năng log thật sự rất quan trọng, nhưng thường bị developer (cũng như SE) ít kinh nghiệm xem nhẹ.
 
-Không có quy ước cụ thể về log trong design/coding convention. Từ đó dẫn đến mỗi developer log một kiểu, không biết lúc nào nên log hay không nên, log được lưu vào đâu, và được sử dụng cho những mục đích nào.
+Từ đó dẫn đến không có quy ước cụ thể về log trong design/coding convention. Từ đó dẫn đến mỗi developer log một kiểu, không biết lúc nào nên log hay không nên, log được lưu vào đâu, và được sử dụng cho những mục đích nào.
 
 Những vấn đề hay gặp liên quan đến logn là
 * Khi cần log để điều tra một issue gì đó, mới phát hiện ra là không có log.
@@ -264,6 +264,14 @@ Các kinh nghiệm thường áp dụng với log là
   Ví dụ như log rotation theo file size, theo ngày. Có cơ chế backup log.
 * Khi bắt lỗi exception, cần phải xuất được ra log.
 * Về log level: Khi hệ thống mới vận hành, thì trên môi trường production cho xuất log ra với mọi level (cả level trace/debug). Khi hệ thống đã chạy được một thời gian ổn định, số lượng user/xử lý tăng lên thì không cho xuất log level debug nữa, chỉ xuất log level info, warning, error.
+* Nếu hệ thống nhận data từ hệ thống khác (ví dụ access vào API của hệ thống khác, hoặc nhận data ở dạng webhook), hoặc xuất data ra cho hệ thống  khác (cung cấp API cho bên ngoài) thì phải lưu log lại data vào/ra này ở nguyên dạng của nó (raw data), không được sửa đổi gì. Như thế mới có tác dụng debug khi gặp vấn đề.
+  Ví dụ khi nhận được một chuỗi data json, thì phải lưu nguyên chuỗi này vào log, chứ không phải lưu log sau khi đã convert nó thành json object.
+
+Trong bài này, chủ yếu chúng ta đề cập đến application log (log do chương trình viết ra). Tuy nhiên trong hệ thống còn có các loại log khác mà chúng ta cần đề cập đến khi thiết kế hệ thống.
+* Web server log
+* Database server log
+* Log của các middleware khác (như message queue...)
+Tất cả các log này đều cần được backup lại đầy đủ (thường thì hệ thống sẽ có yêu cầu phải backup log từ 3-5 năm).
 
 ## Reference
 

@@ -44,8 +44,10 @@ AppAsset::register($this);
             [
                 'label' => 'R&D',
                 'items' => [
-                    ['label' => 'Sample', 'url' => ['/sample/index']],
                     ['label' => 'Session', 'url' => ['/session-cookies/index']],
+                    ['label' => 'Sample', 'url' => ['/sample/index']],
+                    ['label' => 'Log', 'url' => ['sample/log']],
+                    ['label' => 'Create big log', 'url' => ['sample/create-big-log']],
                 ],
             ],
         ]);
