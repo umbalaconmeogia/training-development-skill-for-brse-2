@@ -55,7 +55,7 @@ class SampleController extends Controller
         Yii::warning('This is warning log', __METHOD__);
         Yii::error('This is error log', __METHOD__);
 
-        return $this->renderContent("Log is witten to file");
+        return $this->renderContent("Log is witten to file at " . __METHOD__);
     }
 
     public function actionCreateBigLog()

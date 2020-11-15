@@ -45,6 +45,7 @@ $config = [
                     'logVars' => [],
                     'maxLogFiles' => 50,
                     'except' => ['yii\db\*'],
+                    'logFile' => '@app/runtime/logs/' . date('Ymd') . '_app.log',
                 ],
                 [
                     'class' => 'yii\log\FileTarget',
@@ -52,7 +53,7 @@ $config = [
                     'logVars' => [],
                     'maxLogFiles' => 50,
                     'categories' => ['yii\db\*'],
-                    'logFile' => '@app/runtime/logs/sql.log',
+                    'logFile' => '@app/runtime/logs/' . date('Ymd') . '_sql.log',
                 ],
             ],
         ],
@@ -62,12 +63,14 @@ $config = [
         //             'class' => 'yii\log\FileTarget',
         //             'levels' => ['error', 'warning', 'info', 'trace'],
         //             'logVars' => [],
+        //             'maxLogFiles' => 50,
         //             'except' => ['yii\db\*'],
         //         ],
         //         [
         //             'class' => 'yii\log\FileTarget',
         //             'levels' => ['error', 'warning', 'info', 'trace'],
         //             'logVars' => [],
+        //             'maxLogFiles' => 50,
         //             'categories' => ['yii\db\*'],
         //             'logFile' => '@app/runtime/logs/sql.log',
         //         ],
@@ -92,6 +95,7 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
+        // 'allowedIPs' => ['*'],
         // uncomment the following to add your IP if you are not connecting from localhost.
         //'allowedIPs' => ['127.0.0.1', '::1'],
     ];

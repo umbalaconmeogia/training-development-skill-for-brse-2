@@ -48,6 +48,7 @@ Config cơ bản nhất của logger là
             [
                 'class' => 'yii\log\FileTarget',
                 'levels' => ['error', 'warning', 'info', 'trace'],
+                'logVars' => [], // Nếu muốn tắt log thông tin môi trường thì thêm dòng này.
             ],
         ],
     ],
@@ -107,7 +108,7 @@ Sử dụng cac class có sẵn của Yii, log có thể được xuất ra file
 
 Cùng một dòng log cũng có thể được ghi vào nhiều target khác nhau, thậm chí nhiều file khác nhau (tùy thuộc vào config)
 
-Ví dụ config dưới đây cho phép xuất cùng nội dung log vào cả file và DB.
+Ví dụ config dưới đây cho phép xuất cùng nội dung log vào cả file và DB
 ```php
 'components' => [
     'log' => [
@@ -115,19 +116,44 @@ Ví dụ config dưới đây cho phép xuất cùng nội dung log vào cả fi
             [
                 'class' => 'yii\log\FileTarget',
                 'levels' => ['error', 'warning', 'info', 'trace'],
+                'logVars' => [], // Không log thông tin môi trường.
             ],
             [
                 'class' => 'yii\log\DbTarget',
                 'levels' => ['error', 'warning', 'info', 'trace'],
+                'logVars' => [], // Không log thông tin môi trường.
             ],
         ],
     ],
 ],
 ```
+Chú ý add config trên vào cả 2 file `console.php` và `web.php`.
 
 Ta có thể config các chế độ filter để xuất các nội dung log vào từng target riêng biệt (sẽ giải thích ở phần sau).
 
-TBD: Demo DB target.
+Để có thể xuất log ra database với môi trường phát triển của bài học này, ta làm như sau:
+1. Vào môi trường bash của docker container web
+  ```shell
+  winpty docker exec -it project_term_web bash
+  ```
+2. Chạy migrate để tạo table `log` trong database
+  ```shell
+  yii migrate --migrationPath=@yii/log/migrations/
+  ```
+
+Để có thể xác nhận log đã được ghi vào table `log` trong database, làm như sau:
+1. Vào môi trường bash của docker container db
+  ```shell
+  winpty docker exec -it project_term_sql bash
+  ```
+2. Connect vào postgres
+  ```shell
+  psql -U project_term_user project_term
+  ```
+3. Show data trong table `log`
+  ```sql
+  select * from log;
+  ```
 
 ## Log category
 
