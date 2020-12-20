@@ -1,6 +1,6 @@
-# Hiểu về requirement definition
+# Requirement definition
 
-# Overview
+## Overview
 
 Requirement defition là tài liệu về những thứ cần làm, đứng từ góc nhìn của khách hàng (user).
 
@@ -17,3 +17,7 @@ Tài liệu này cần mô tả được
 Khi làm tài liệu RD, có thể dùng các UML diagram sau:
 1. [Use cases diagram](../uml/UseCasesDiagram.md) (để mô tả cách người dùng sẽ sử dụng hệ thống (cho các tác vụ nào)).
 2. Activity diagram (để mô tả flow nghiệp vụ, cũng như khoanh vùng scope hệ thống).
+
+## Requirement definition
+
+[Requirement definition của dự án tại đây](RequirementDefinition.pdf)
